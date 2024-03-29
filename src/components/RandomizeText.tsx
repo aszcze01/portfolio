@@ -55,7 +55,7 @@ const RandomizeText = ({ words }: { words: string[] }) => {
 
     const addClassWithDelay = (array: HTMLElement[], delay: number) => {
       shuffle(array);
-      array.forEach((element, index) => {
+      array.forEach((_, index) => {
         setTimeout(() => {
           array[index].classList.add("fade");
         }, index * delay);
