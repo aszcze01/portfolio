@@ -1,0 +1,74 @@
+@import "./mixins/respond-to";
+
+.vertical-timeline {
+    &::before {
+      width: 1px !important;
+      left: 40px !important;
+    }
+    @include respond-to(desktop) {
+        &::before {
+            left: 50% !important;
+        }
+    }
+}
+
+.vertical-timeline-element-date {
+    float: none !important;
+    @include respond-to(desktop) {
+        float: left !important;
+        right: 134% !important;
+    }
+}
+
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+    // left: 100% !important;
+    // text-align: left !important;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: none !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: 0px 0px 0px 15px rgb(0, 0, 0) inset,
+    0px 0px 0px 16px rgb(255, 255, 255) inset !important;
+  width: 100px !important;
+  height: 100px !important;
+  margin-left: -50px !important;
+  canvas {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
+.vertical-timeline--two-columns
+  .vertical-timeline-element:nth-child(even):not(
+    .vertical-timeline-element--left
+  ) {
+  .bio {
+    &__content {
+      &::before {
+        transform: rotate(180deg);
+        left: calc(-0.5rem - 1px);
+      }
+    }
+  }
+}
+
+.vertical-timeline-element-icon {
+  animation: none !important;
+  left: 40px !important;
+  @include respond-to(desktop) {
+    left: 50% !important;
+  }
+}
+
+// .vertical-timeline-element-icon.bounce-in {
+//   animation: none !important;
+// }
+
+// .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
+//   right: 135% !important;
+//   @include MPlusOneCodeFont;
+//   font-size: 1.2rem;
+// }

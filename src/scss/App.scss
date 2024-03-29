@@ -1,0 +1,239 @@
+@import "./mixins/respond-to";
+@import "./mixins/fontStyles";
+@import "./timeline.scss";
+
+$green: rgb(0, 255, 84);
+
+#root {
+  // max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+body {
+  background-color: #000;
+}
+
+main {
+  // min-height: 100vh;
+  // min-width: 100vw;
+  // max-width: 1280px;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 35%,
+    rgb(36, 36, 36) 100%
+    );
+    @include respond-to(desktop) {
+      height: 100vh;
+  }
+
+  .container {
+    // max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    font-family: "DM Mono", monospace;
+    gap: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+    @include respond-to(desktop) { 
+      flex-direction: row;
+      height: 800px;
+      padding: 0;
+    }
+  }
+  .device {
+    position: relative;
+    font-size: 1.1rem;
+    background-color: rgb(49, 49, 49);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    color: white;
+    &__alien {
+      position: relative;
+      width: auto;
+      height: auto;
+      order: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      @include respond-to(desktop) {
+        min-width: 450px;
+        height: 100%;
+      }
+      &--wide {
+        width: 100%;
+      }
+
+      .miniMenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        color: gold;
+        // padding: 0.5rem 0.5rem 0.5rem 0;
+        height: 3rem;
+        display: flex;
+        justify-content: flex-start;
+        // border: 1px solid $green;
+        // border-radius: 5px;
+      }
+
+      .primaryPanel {
+        align-self: flex-end;
+        margin: 0 auto;
+        border-radius: 20px;
+        height: auto;
+        width: 100%;
+        position: static;
+        @include respond-to(desktop) { 
+          position: absolute;
+          height: 50%;
+          width: 100%;
+        }
+
+        &__wide {
+          left: -70%;
+          bottom: 20%;
+          transition: all 1s ease-in-out;
+        }
+        &__narrow {
+          bottom: 0;
+          height: 400px;
+        }
+      }
+
+      .secondaryPanel {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-size: 1.2rem;
+        overflow: hidden;
+        @include Comfortaa;
+        @include respond-to(desktop) {
+          position: absolute;
+          top: 3rem;
+          left: 3rem;
+        }
+        &__hidden {
+          display: none;
+        }
+        .scanMenu {
+          position: relative;
+          cursor: pointer;
+          @include Comfortaa;
+          span {
+            position: relative;
+            margin: 0 1rem 0 0;
+          }
+        }
+        .panel {
+          color: $green;
+          font-size: 1.1rem;
+          text-align: left;
+          left: 1rem;
+          // user-select: none;
+          margin-bottom: 1rem;
+          > div {
+            position: relative;
+          }
+          .alienText {
+            position: absolute;
+            top: 0;
+            .alienChar {
+              background: #000;
+            }
+            .fade {
+              visibility: hidden;
+            }
+          }
+          span {
+            position: relative;
+          }
+        }
+      }
+    }
+    &__human {
+      order: 2;
+      background-color: rgb(22, 22, 22);
+      padding: 2vw;
+      width: 100%;
+      height: auto;
+      font-weight: 400;
+      font-style: normal;
+      color: $green;
+      border-radius: 20px;
+      margin-left: 0;
+      white-space: pre-line;
+      @include respond-to(desktop) {
+        margin-left: 3em;
+        width: 500px;
+        height: 80%;
+      }
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+.bio {
+  &__content {
+    position: relative;
+    // text-align: center;
+    border: 1px solid $green;
+    border-radius: 0.5rem;
+    margin: 0 0 0 2rem;
+    padding: 2rem;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 35%,
+      rgb(36, 36, 36) 100%
+    );
+    @include Comfortaa;
+    @include respond-to(desktop) {
+      margin: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: calc(-0.5rem - 1px);
+      top: 0.5rem;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0.5rem 0 0.5rem 0.5rem;
+      border-color: transparent transparent transparent $green;
+      transform: rotate(0deg);
+      display: none;
+      @include respond-to(desktop) {
+        display: block;
+      }
+    }
+  }
+}
