@@ -14,8 +14,8 @@ const Home = () => {
 
   // const secondaryPanel = document.querySelector(".secondaryPanel");
   const primaryPanel = document.querySelector(".primaryPanel");
-  snap.isDesc && primaryPanel?.classList.add("primaryPanel__wide");
-  !snap.isEarthVisible && primaryPanel?.classList.remove("primaryPanel__wide");
+//   snap.isDesc && primaryPanel?.classList.add("primaryPanel__wide");
+//   !snap.isEarthVisible && primaryPanel?.classList.remove("primaryPanel__wide");
   snap.isObjectData && primaryPanel?.classList.add("primaryPanel__narrow");
 
   return (

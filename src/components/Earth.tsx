@@ -64,11 +64,9 @@ const Earth = (props: {
 
   const matches = useMediaQuery('(max-width: 767px)')
 
-  let globeWidth = matches ? 300 : 900;
-  let globeHeight = matches ? 300 : 900;
+  let globeWidth = matches ? 300 : 500;
+  let globeHeight = matches ? 300 : 500;
 
-  // const inactiveColor = "rgba(255, 183, 0, 100)";
-  // const inactiveColor = 'rgba(150, 150, 150, 100)'
   const greenColor = "rgba(0, 255, 84, 100)";
   const blackColor = "rgba(0, 0, 0, .8)";
 
@@ -220,17 +218,19 @@ const Earth = (props: {
         //   // setEarthHeight(globeRef.current?.height);
         // }}
 
-        hexPolygonsData={countries.features}
-        hexPolygonResolution={3}
-        hexPolygonMargin={0.3}
-        hexPolygonUseDots={true}
-        hexPolygonColor={() => `green`}
+        // hexPolygonsData={countries.features}
+        // hexPolygonResolution={3}
+        // hexPolygonMargin={0.3}
+        // hexPolygonUseDots={true}
+        // hexPolygonColor={() => `green`}
+
         ringsData={gData}
         ringMaxRadius={20}
         ringPropagationSpeed={-4}
         ringRepeatPeriod={2000}
         ringAltitude={earthState.ringAlt}
         ringColor={() => "white"}
+
         pointsData={ufosData}
         pointLat={"latitude"}
         pointLng={"longitude"}
@@ -246,6 +246,7 @@ const Earth = (props: {
         objectLabel={getTooltip}
         objectThreeObject={ufoObject}
         onObjectClick={handleObjectClick}
+
         labelsData={gData}
         labelColor={() => "white"}
         labelSize={0.3}

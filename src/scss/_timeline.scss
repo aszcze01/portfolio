@@ -1,4 +1,6 @@
 @import "./mixins/respond-to";
+@import "./vars.scss";
+@import "./mixins/fontStyles";
 
 .vertical-timeline {
     &::before {
@@ -14,6 +16,9 @@
 
 .vertical-timeline-element-date {
     float: none !important;
+    color: $grey !important;
+    font-size: 1.2rem !important;
+    @include JuraBold;
     @include respond-to(desktop) {
         float: left !important;
         right: 134% !important;
