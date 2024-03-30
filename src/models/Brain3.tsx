@@ -105,21 +105,12 @@ export default () => (
         <Ring rotation={[0, Math.PI / 2, 0]} />
         <Ring rotation={[0, 0, Math.PI / 2]} />
 
-        {/* <mesh scale={30} position={[0, 20, 0]}>
-            <FakeGlowMaterial />
-            <sphereGeometry />
-          </mesh> */}
-        {
-        /* <mesh scale={50} position={[0, -20, 0]}>
-                      <Ring />
-                        <FakeGlowMaterial />
-                    </mesh> */}
-        <mesh scale={1} position={[0, -120, 0]}>
+        <mesh scale={1.1} position={[0, -120, 0]}>
           <Brain3 />
         </mesh>
         <Sparkles
           count={100}
-          scale={200}
+          scale={300}
           size={35}
           speed={1.5}
           opacity={0.3}

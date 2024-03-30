@@ -8,6 +8,7 @@
       left: 40px !important;
     }
     @include respond-to(desktop) {
+        background: rgba(0, 0, 0, 0.7) !important;
         &::before {
             left: 50% !important;
         }

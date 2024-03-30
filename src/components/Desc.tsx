@@ -1,5 +1,5 @@
 import { TypeAnimation } from 'react-type-animation';
-import state from "../store"
+// import state from "../store"
 
 /**
  * Renders a text animation component with a sequence of text and pause times.
@@ -28,7 +28,7 @@ const Desc = ({
     3000,
   ] as (string | number)[],
   speed = { type: 'keyStrokeDelayInMs', value: 30 } as { type: 'keyStrokeDelayInMs', value: number },
-  style = { fontSize: '1em', display: 'block', minHeight: '200px', textAlign: 'left' } as React.CSSProperties,
+  style = { display: 'block', minHeight: '200px', textAlign: 'left' } as React.CSSProperties,
   repeat = 0,
 }: {
   splitter?: (str: string) => string[];
@@ -44,6 +44,7 @@ const Desc = ({
       speed={speed}
       style={style}
       repeat={repeat}
+      cursor={false}
     />
   );
 };

@@ -192,13 +192,13 @@ const Earth = (props: {
     // globeRef.current.getTooltip();
   };
 
-  const [countries, setCountries] = useState({ features: []});
+  // const [countries, setCountries] = useState({ features: []});
 
-  useEffect(() => {
-      // load data
-      fetch('../datasets/ne_110m_admin_0_countries.geojson').then(res => res.json()).then(setCountries);
+  // useEffect(() => {
+  //     // load data
+  //     fetch('../datasets/ne_110m_admin_0_countries.geojson').then(res => res.json()).then(setCountries);
 
-    }, []);
+  //   }, []);
 
   return (
     <>

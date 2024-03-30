@@ -1,12 +1,14 @@
-// import { Loader, useGLTF } from "@react-three/drei";
-// import RingScene from "../assets/3D/ring.glb";
-import { Suspense, useEffect, useRef } from "react";
-// import * as THREE from 'three'
+import { useRef } from "react";
 import { FakeGlowMaterial } from "../materials/FakeGlowMaterial";
 import {useFrame} from "@react-three/fiber";
 import * as THREE from 'three'
+import { Euler } from 'three'
 
-export const Ring = ({ rotation }) => {
+interface Props {
+    rotation: Euler | undefined
+}
+
+export const Ring = ({ rotation }: Props) => {
   const meshRef = useRef<THREE.Mesh>(null!);
 
   useFrame((_, delta) => {
@@ -16,9 +18,9 @@ export const Ring = ({ rotation }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={1} position={[0, 20, 0]} rotation={rotation}>
-      <FakeGlowMaterial />
+    <mesh ref={meshRef} scale={1.1} position={[0, 20, 0]} rotation={rotation}>
       <torusGeometry args={[100, 1, 2, 128]} />
+      <FakeGlowMaterial />
     </mesh>
   );
 };

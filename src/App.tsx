@@ -10,6 +10,7 @@ function App(): JSX.Element {
   // const snap = useSnapshot(state);
   return (
     <>
+    
       <header></header>
 
       <main>
@@ -25,6 +26,7 @@ function App(): JSX.Element {
       </main>
 
       <footer></footer>
+        <div className="content content--canvas"></div>
     </>
   );
 }
