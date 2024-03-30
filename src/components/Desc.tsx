@@ -17,13 +17,14 @@ const Desc = ({
   splitter = (str: string): string[] => str.split(/(?= )/),
   sequence = [
     `
-      Alien Activity Monitoring Agency Log - 0000020240319
+      Alien Watch Agency Log - 0000020240319
 
       CONFIDENTIAL
 
-      Finally! After over a year of research, we've managed to decode data from the alien device we found in the wreckage of an alien probe that crashed in December 2022 somewhere in the remote regions of Poland. Our organization masked the crash site by placing a decoy of a lost training rocket there, although we don't think anyone noticed anything anyway. The only device that survived the crash is likely some kind of mind scanner. It seems that the aliens are mass collecting data either through abductions or remotely scanning minds using probes.
+      Finally! After over a year of research, we've managed to decode data from the alien device we found in the wreckage of an alien probe that crashed in December 2022 somewhere in the remote regions of Poland.
+      The Agency masked the crash site by placing a decoy of a lost training rocket there, although we don't think anyone noticed anything anyway. The only device that survived the crash is likely some kind of mind scanner. It seems that the aliens are mass collecting data either through abductions or remotely scanning minds using probes.
 
-      Unfortunately, almost all the data on the device is damaged. We've only been able to reconstruct the last record, which contains a scan of the mind of a man from central Poland.
+      Unfortunately, almost all the data on the device is damaged. We've only been able to partially reconstruct the last record, which contains a scan of the mind of a man from central Poland.
     `,
     3000,
   ] as (string | number)[],

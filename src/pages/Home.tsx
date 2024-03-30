@@ -14,15 +14,15 @@ const Home = () => {
   const snap = useSnapshot(state);
 
   // const secondaryPanel = document.querySelector(".secondaryPanel");
-  const primaryPanel = document.querySelector(".primaryPanel");
+//   const primaryPanel = document.querySelector(".primaryPanel");
   //   snap.isDesc && primaryPanel?.classList.add("primaryPanel__wide");
   //   !snap.isEarthVisible && primaryPanel?.classList.remove("primaryPanel__wide");
 //   snap.isObjectData && primaryPanel?.classList.add("primaryPanel__narrow");
 
   return (
     <div className="container">
-      <EqualHeight timeout={400} updateOnChange={snap.isObjectData}>
-        <EqualHeightElement name="device" placeholder={false}>
+      {/* <EqualHeight timeout={400} updateOnChange={snap.isObjectData}> */}
+        {/* <EqualHeightElement name="device" placeholder={false}> */}
           <section className="device__alien">
             <div className="secondaryPanel">
               {snap.isPanelInfo && <RandomizeText words={EarthPanelText} />}
@@ -35,15 +35,15 @@ const Home = () => {
               {/* {snap.isBio && <Bio />} */}
             </div>
           </section>
-        </EqualHeightElement>
+        {/* </EqualHeightElement> */}
 
-        <EqualHeightElement name="device" placeholder={false}>
+        {/* <EqualHeightElement name="device" placeholder={false}> */}
           <section className="device__human">
             {snap.isLoader && <Intro />}
             {snap.isDesc && <Desc />}
           </section>
-        </EqualHeightElement>
-      </EqualHeight>
+        {/* </EqualHeightElement> */}
+      {/* </EqualHeight> */}
     </div>
   );
 };

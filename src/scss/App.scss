@@ -11,25 +11,18 @@
   overflow: hidden;
 }
 
-html, body {
-  background: hsla(0,0%,5%,1);
+html,
+body {
+  background: hsla(0, 0%, 5%, 1);
 }
 
 .content {
-  // height: 100vh;
-  // justify-content: center;
-  // display: flex;
-    // flex-direction: column;
-    width: 100%;
-    height: 100%;
-    // height: calc(100vh - 13rem);
-    position: relative;
-    // justify-content: flex-start;
-    // align-items: center;
-    // z-index: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 h2 {
@@ -37,9 +30,11 @@ h2 {
   font-size: 1.5rem;
 }
 
-// body {
-//   background-color: #000;
-// }
+a {
+  &:hover {
+    color: gold;
+  }
+}
 
 header {
   position: relative;
@@ -47,7 +42,7 @@ header {
   height: 70px;
   border-radius: 1rem;
   margin: 1rem auto 2rem;
-  max-width: 90vw;
+  max-width: 1170px;
   z-index: 1;
 }
 
@@ -60,15 +55,9 @@ main {
   color: white;
   position: relative;
   z-index: 1;
-  // background: rgb(0, 0, 0);
-  // background: linear-gradient(
-  //   180deg,
-  //   rgba(0, 0, 0, 1) 35%,
-  //   rgb(36, 36, 36) 100%
-  //   );
-    @include respond-to(desktop) {
-      height: 100vh;
-      padding-bottom: 3rem;
+  @include respond-to(desktop) {
+    height: 100vh;
+    padding-bottom: 3rem;
   }
 
   .container {
@@ -80,15 +69,15 @@ main {
     flex-direction: column;
     text-align: left;
     font-family: "DM Mono", monospace;
-    gap: 2rem;
+    gap: 20px;
     overflow: hidden;
-    padding: 2rem;
     background: rgba(0, 0, 0, 0.7);
-    @include respond-to(desktop) { 
-      flex-direction: row;
-      align-items: flex-start;
-      // height: 800px;
-      // padding: 0;
+    padding: 0;
+    @include respond-to(desktop) {
+      padding: 0 2rem 2rem;
+      display: grid;
+      grid-template-columns: 500px 650px;
+      align-items: start;
     }
   }
   .device {
@@ -113,7 +102,7 @@ main {
       background: $panelGrey;
       border-radius: 1rem;
       @include respond-to(desktop) {
-        min-width: 500px;
+        // min-width: 500px;
         height: auto;
       }
       &--wide {
@@ -135,13 +124,15 @@ main {
         align-self: flex-end;
         margin: 0 auto;
         border-radius: 1rem;
-        // height: auto;
-        height: 500px;
+        height: auto;
+        display: flex;
+        justify-content: center;
         width: 100%;
         position: static;
-        @include respond-to(desktop) { 
+        @include respond-to(desktop) {
           width: 100%;
-          margin: 2rem 0;
+          margin: 0;
+          height: 500px;
         }
 
         &__wide {
@@ -165,7 +156,7 @@ main {
         padding: 1.2rem;
         @include Jura;
         @include respond-to(desktop) {
-          padding: 0 2rem;
+          padding: 0;
           margin-top: 3rem;
         }
         &__hidden {
@@ -175,9 +166,22 @@ main {
           position: relative;
           cursor: pointer;
           @include Jura;
+          @include respond-to(desktop) {
+            margin: 1rem auto;
+            width: 380px;
+          }
+          &__links {
+            float: right;
+          }
+          &__link {
+            margin-right: 1rem;
+            border-bottom: 1px solid $grey;
+            &:last-of-type {
+              margin-right: 0;
+            }
+          }
           span {
             position: relative;
-            margin: 0 1rem 0 0;
           }
         }
         .panel {
@@ -188,13 +192,18 @@ main {
           line-height: 1.4;
           white-space: pre-line;
           margin-bottom: 1rem;
-          // user-select: none;
+          @include respond-to(desktop) {
+            width: 380px;
+            margin: 0 auto;
+          }
           > div {
             position: relative;
           }
           .alienText {
             position: absolute;
             top: 0;
+            width: 380px;
+            overflow: hidden;
             .alienChar {
               background: $panelGrey;
             }
@@ -202,8 +211,15 @@ main {
               visibility: hidden;
             }
           }
+          .humanText {
+            display: flex;
+            justify-content: space-between;
+          }
           span {
             position: relative;
+            &:nth-child(2) {
+              text-align: right;
+            }
           }
         }
       }
@@ -211,9 +227,9 @@ main {
     &__human {
       order: 2;
       background-color: rgb(22, 22, 22);
-      padding: 2vw;
-      width: 100%;
+      padding: 0 2rem 2rem;
       height: auto;
+      width: auto;
       font-weight: 400;
       font-style: normal;
       font-size: 1.1rem;
@@ -223,9 +239,7 @@ main {
       white-space: pre-line;
       @include Jura;
       @include respond-to(desktop) {
-        // margin-left: 3em;
-        width: 500px;
-        // height: 80%;
+        padding: 2rem;
       }
       &--hidden {
         display: none;
@@ -233,8 +247,6 @@ main {
     }
   }
 }
-
-
 
 .bio {
   &__content {
@@ -273,7 +285,7 @@ main {
 }
 
 .equal-height-JlocK {
-    display:block;
-    overflow:hidden;
-    transition-property:height
+  display: block;
+  overflow: hidden;
+  transition-property: height;
 }

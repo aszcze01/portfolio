@@ -39,7 +39,10 @@ const RandomizeText = ({ words }: { words: string[] }) => {
 
     return (
       <>
-        <div className="humanText">{wordChars.join("")}</div>
+        <div
+        className="humanText"
+        dangerouslySetInnerHTML={{__html: wordChars.join("")}}
+        />
         <div className="alienText">{alienText}</div>
       </>
     );
