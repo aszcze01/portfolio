@@ -12,13 +12,12 @@ function App(): JSX.Element {
   // const snap = useSnapshot(state);
   return (
     <>
-    
-      <header>
-        <Header />
-      </header>
-
       <main>
         <BrowserRouter>
+
+            <header>
+              <Header />
+            </header>
           
             <Routes>
               <Route path="/" element={<Home />} />
@@ -31,7 +30,7 @@ function App(): JSX.Element {
       </main>
 
       <footer></footer>
-        <div className="content content--canvas"></div>
+        <div className="content--canvas"></div>
     </>
   );
 }

@@ -12,7 +12,9 @@ const ScanMenu = () => {
           <Link to="/bio">BIO</Link>
         </span>
         <span className="scanMenu scanMenu__link">WORK</span>
-        <span className="scanMenu scanMenu__link">CONTACT</span>
+        <span className="scanMenu scanMenu__link">
+        <Link to="/contact">CONTACT</Link>
+        </span>
       </span>
     </div>
   );

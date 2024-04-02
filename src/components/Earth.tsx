@@ -171,7 +171,7 @@ const Earth = (props: {
   }, [globeRadius]);
 
   const getTooltip = (d) => `
-      <div style="cursor: pointer;text-align: center; background-color: ${blackColor}; color: ${greenColor}; border-radius: 1rem; border: 1px solid green; padding: 1rem; text-transform: capitalize; font-size: .8rem;">
+      <div style="cursor: pointer;text-align: center; background-color: ${blackColor}; color: ${greenColor}; border-radius: 0.5rem; border: 1px solid green; padding: 1rem; text-transform: capitalize; font-size: .8rem;">
         <div>Scan data:</div>
         <div>Status: corrupted</div>
         <div>loc: <b>${d.city}</b>, ${d.country}</div>

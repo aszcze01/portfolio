@@ -10,7 +10,9 @@ import { slideIn } from "../utils/motion";
  * @returns {JSX.Element} The rendered Contact component.
  */
 const Contact = (): JSX.Element => {
+
   const formRef = useRef<HTMLFormElement>(null);
+
   const [form, setForm] = useState<{
     name: string;
     email: string;
@@ -88,7 +90,7 @@ const Contact = (): JSX.Element => {
         className="contactForm__container"
       >
         {/* <p className="contactForm__title">Get in touch</p> */}
-        <h3 className="contactForm__subtitle">Contact</h3>
+        <h3 className="contactForm__subtitle">Make contact!</h3>
 
         <form
           ref={formRef}
@@ -102,7 +104,7 @@ const Contact = (): JSX.Element => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className="contactForm__label__input"
             />
           </label>
@@ -113,7 +115,7 @@ const Contact = (): JSX.Element => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email address?"
               className="contactForm__label__input"
             />
           </label>
@@ -124,7 +126,7 @@ const Contact = (): JSX.Element => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What you want to say?"
+              placeholder="What do you want to say?"
               className="contactForm__label__input"
             />
           </label>

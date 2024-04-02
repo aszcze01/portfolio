@@ -82,7 +82,7 @@ export default () => (
       orthographic
       shadows
       camera={{
-        zoom: 1.5,
+        zoom: 1.4,
         position: [0, 30, 250],
       }}
     >

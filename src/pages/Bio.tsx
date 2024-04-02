@@ -26,7 +26,7 @@ const Bio = () => {
 
   return (
     <>
-      <Scrollbars style={{ width: 1200, height: 900 }}>
+      <Scrollbars style={{ width: '100%', height: '1000px' }}>
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"

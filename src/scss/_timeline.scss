@@ -16,19 +16,30 @@
 }
 
 .vertical-timeline-element-date {
-    float: none !important;
+    float: left !important;
     color: $grey !important;
     font-size: 1.2rem !important;
+    padding: 0.8em 0 0.8em 3em !important;
+    opacity: 1 !important;
     @include JuraBold;
     @include respond-to(desktop) {
-        float: left !important;
+        padding: 1.2rem 0;
         right: 134% !important;
     }
 }
 
 .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    // left: 100% !important;
-    // text-align: left !important;
+    // left: 130% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    @include respond-to(desktop) {
+      // margin-left: 3.5rem !important;
+    }
+  }
+  
+  .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
+    text-align: right !important;
+    
 }
 
 .vertical-timeline-element-content {
@@ -36,7 +47,9 @@
 }
 
 .vertical-timeline-element-icon {
-  box-shadow: 0px 0px 0px 15px rgb(0, 0, 0) inset,
+  box-shadow: 
+    0px 0px 0px 4px rgb(0, 0, 0) inset,
+    0px 0px 0px 15px rgb(0, 0, 0) inset,
     0px 0px 0px 16px rgb(255, 255, 255) inset !important;
   width: 100px !important;
   height: 100px !important;

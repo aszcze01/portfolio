@@ -1,0 +1,23 @@
+@import "./mixins/respond-to";
+@import "./vars.scss";
+@import "./mixins/fontStyles";
+
+nav {
+    @include Jura;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 2rem 0 0;
+    font-size: 1rem;
+    @include respond-to(desktop) {
+        font-size: 1.2rem;
+    }
+    a {
+        margin-right: 1rem;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    .headerLinks {
+        float: right;
+    }
+}
