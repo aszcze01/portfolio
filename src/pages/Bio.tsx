@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { WorkIcon } from "../components/Icons";
+import { WorkIcon } from "../components/old/Icons";
 // import reactIcon from "../assets/react.svg";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { Tilt } from "@jdion/tilt-react";

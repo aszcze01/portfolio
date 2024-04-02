@@ -4,7 +4,7 @@ import ThreeGlobe from 'three-globe'
 import texture from '../assets/earth-green-3.jpg'
 import * as topojson from 'topojson-client'
 import * as THREE from 'three'
-import points from '../datasets/points.js'
+import points from '../../datasets/points.js'
 
 
 extend({ ThreeGlobe })

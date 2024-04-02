@@ -1,11 +1,11 @@
 // import Globe from "./Globe";
-import Earth3 from "./Earth.js";
+import Earth3 from "../Earth.js";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import PostProcessingEffects from "./Effects.js";
-import RandomizeText from "./RandomizeText.js";
+import PostProcessingEffects from "../Effects.js";
+import RandomizeText from "../RandomizeText.js";
 import texture from '../assets/earth-green-3.jpg'
-import points from '../datasets/points.js'
+import points from '../../datasets/points.js'
 import { useRef } from "react";
 
 /**

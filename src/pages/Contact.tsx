@@ -45,16 +45,19 @@ const Contact = (): JSX.Element => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_gpo4z5a',
+        'template_uaultqd',
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Andrzej Szczepanik",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "aszczepanik2@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        '6sCCuOD_pmcnhuxWQ'
       )
       .then(
         () => {
@@ -84,8 +87,8 @@ const Contact = (): JSX.Element => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="contactForm__container"
       >
-        <p className="contactForm__title">Get in touch</p>
-        <h3 className="contactForm__subtitle">Contact.</h3>
+        {/* <p className="contactForm__title">Get in touch</p> */}
+        <h3 className="contactForm__subtitle">Contact</h3>
 
         <form
           ref={formRef}

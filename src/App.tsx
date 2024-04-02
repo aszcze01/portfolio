@@ -6,13 +6,16 @@ import Home from "./pages/Home";
 import Bio from "./pages/Bio";
 import Info from "./components/Info";
 import Contact from "./pages/Contact";
+import Header from "./components/Header";
 
 function App(): JSX.Element {
   // const snap = useSnapshot(state);
   return (
     <>
     
-      <header></header>
+      <header>
+        <Header />
+      </header>
 
       <main>
         <BrowserRouter>
