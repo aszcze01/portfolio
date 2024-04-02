@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { useSnapshot } from "valtio";
 // import state from "./store";
 import Home from "./pages/Home";
-import Bio from "./components/Bio";
+import Bio from "./pages/Bio";
 import Info from "./components/Info";
+import Contact from "./pages/Contact";
 
 function App(): JSX.Element {
   // const snap = useSnapshot(state);
@@ -20,6 +21,7 @@ function App(): JSX.Element {
               <Route path="/" element={<Home />} />
               <Route path="/info" element={<Info />} />
               <Route path="/bio" element={<Bio />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
   
         </BrowserRouter>

@@ -1,6 +1,7 @@
 @import "./mixins/respond-to";
 @import "./mixins/fontStyles";
 @import "./timeline.scss";
+@import "./contact.scss";
 @import "./vars.scss";
 
 #root {
@@ -132,7 +133,7 @@ main {
         @include respond-to(desktop) {
           width: 100%;
           margin: 0;
-          height: 500px;
+          sheight: 500px;
         }
 
         &__wide {

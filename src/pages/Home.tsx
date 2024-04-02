@@ -4,7 +4,7 @@ import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
 import Brain3 from "../models/Brain3";
-import Bio from "../components/Bio";
+import Bio from "./Bio";
 import Intro from "../components/Intro";
 import Desc from "../components/Desc";
 import { EarthPanelText, ObjectDataText } from "../datasets/PanelText";
