@@ -334,9 +334,9 @@ main {
 }
 
 .content--canvas {
-  display: none;
   @include respond-to(desktop) {
     display: block;
+    display: none;
   }
 }
 

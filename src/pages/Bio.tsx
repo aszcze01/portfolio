@@ -12,6 +12,7 @@ import MonitorFlat from "../models/MonitorFlat";
 import MonitorCRT from "../models/MonitorCRT";
 import Camera from "../models/Camera";
 import IMac from "../models/IMac";
+import Palette from "../models/Palette";
 
 const Bio = () => {
 
@@ -26,7 +27,7 @@ const Bio = () => {
 
   return (
     <>
-      <Scrollbars style={{ width: '100%', height: '1000px' }}>
+      {/* <Scrollbars style={{ width: '100%', height: '1000px' }}> */}
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -205,8 +206,31 @@ const Bio = () => {
             </Tilt>
           </VerticalTimelineElement>
 
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work edu"
+            contentStyle={contentStyle}
+            contentArrowStyle={contentArrowStyle}
+            iconStyle={iconStyle}
+            date="1995 – 2000"
+            icon={<Palette />}
+          >
+            <Tilt>
+              <div className="bio__content">
+                <h3 className="vertical-timeline-element-title">
+                  Academy <br />
+                  of Fine Arts
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">Lodz, Poland</h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </Tilt>
+          </VerticalTimelineElement>
+
         </VerticalTimeline>
-      </Scrollbars>
+      {/* </Scrollbars> */}
     </>
   );
 };
