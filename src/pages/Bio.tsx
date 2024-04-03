@@ -174,7 +174,7 @@ const Bio = () => {
                 <h3 className="vertical-timeline-element-title">
                   Graphic Designer
                 </h3>
-                <h4 className="vertical-timeline-element-subtitle">Sole Proprietorship</h4>
+                <h4 className="vertical-timeline-element-subtitle">Freelancer</h4>
                 <p>
                   Creative Direction, User Experience, Visual Design, Project
                   Management, Team Leading

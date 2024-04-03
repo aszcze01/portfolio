@@ -12,68 +12,34 @@ import PostProcessingEffects from '../components/Effects'
 import { useFrame } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
-  nodes: {
-    Model_material0_0: THREE.Mesh
-    Model_material1_0: THREE.Mesh
-    Model_material2_0: THREE.Mesh
-    defaultMaterial002: THREE.Mesh
-    defaultMaterial003: THREE.Mesh
-    defaultMaterial004: THREE.Mesh
+    nodes: {
+      defaultMaterial003: THREE.Mesh
+    }
   }
-  materials: {}
-}
 
 const Palette = (props: JSX.IntrinsicElements['group']) => {
+
   const { nodes } = useGLTF(PaletteScene) as GLTFResult
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
+
   const meshRef = useRef<THREE.Mesh>(null!)
 
-  useFrame((_, delta) => (meshRef.current.rotation.y -= delta))
+  useFrame((_, delta) => (meshRef.current.rotation.y += delta))
 
   return (
     <group ref={meshRef} {...props} dispose={null}>
-      <group position={[1.393, 0.931, 1.162]} rotation={[-Math.PI / 2, 100, 0]} scale={12.889}>
-        <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-          <group rotation={[-0.717, 0, 0]} scale={100}>
+      <group position={[4.373, -0.631, -0.279]} rotation={[-1.219, -0.019, -0.043]} scale={0.125}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
+          <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <mesh
-              geometry={nodes.Model_material0_0.geometry}
+              geometry={nodes.defaultMaterial003.geometry}
               material={material}
-            />
-            <mesh
-              geometry={nodes.Model_material1_0.geometry}
-              material={material}
-            />
-            <mesh
-              geometry={nodes.Model_material2_0.geometry}
-              material={material}
+              position={[-0.171, 0.031, 0.173]}
+              rotation={[-0.722, -0.173, 0.019]}
+              scale={0.444}
             />
           </group>
-        </group>
-      </group>
-      <group position={[1.393, 0.931, 1.162]} rotation={[-Math.PI / 2, -0.225, 0]} scale={0.125}>
-        <group scale={100}>
-          <mesh
-            geometry={nodes.defaultMaterial002.geometry}
-            material={material}
-            position={[-0.198, 0.38, 0.264]}
-            rotation={[-0.234, -0.664, -1.826]}
-            scale={0.759}
-          />
-          <mesh
-            geometry={nodes.defaultMaterial003.geometry}
-            material={material}
-            position={[-0.078, 0.503, 0.245]}
-            rotation={[-0.878, -0.209, -0.264]}
-            scale={0.564}
-          />
-          <mesh
-            geometry={nodes.defaultMaterial004.geometry}
-            material={material}
-            position={[-0.367, 0.24, 0.344]}
-            rotation={[0.29, -0.851, -2.016]}
-            scale={0.842}
-          />
         </group>
       </group>
     </group>
@@ -88,6 +54,7 @@ export default () => (
         // shadows
         camera={{
             position: [0, 0, 100],
+            // rotation: [0, -Math.PI / 2, -Math.PI / 2],
         }}
     >
         <OrbitControls
