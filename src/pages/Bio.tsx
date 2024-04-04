@@ -7,7 +7,7 @@ import { WorkIcon } from "../components/old/Icons";
 // import reactIcon from "../assets/react.svg";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { Tilt } from "@jdion/tilt-react";
-import WGlobe from "../models/WGlobe";
+import WGlobe from "../models/old/WGlobe";
 import MonitorFlat from "../models/MonitorFlat";
 import MonitorCRT from "../models/MonitorCRT";
 import Camera from "../models/Camera";

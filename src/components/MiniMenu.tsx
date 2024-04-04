@@ -1,6 +1,6 @@
 import { Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import WGlobe from "../models/WGlobe";
+import WGlobe from "../models/old/WGlobe";
 import * as THREE from 'three'
 
 export const MiniMenu = () => {

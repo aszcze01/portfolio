@@ -12,9 +12,9 @@ import { Canvas, useFrame,} from "@react-three/fiber";
 import BrainScene from "../assets/3D/brain3.glb";
 // import { a } from "@react-spring/three";
 import * as THREE from "three";
-import PostProcessingEffects from "../components/Effects";
-import Loader from "../components/Loader";
-import { Ring } from "./Ring";
+import PostProcessingEffects from "../../components/Effects";
+import Loader from "../../components/Loader";
+import { Ring } from "../Ring";
 // import { FakeGlowMaterial } from "../materials/FakeGlowMaterial";
 
 /**

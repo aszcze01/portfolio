@@ -8,7 +8,7 @@ Title: Wireframe 3D Globe
 
 import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
 import GlobeScene from '../assets/3D/globe-simple.glb'
-import PostProcessingEffects from '../components/Effects'
+import PostProcessingEffects from '../../components/Effects'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import * as THREE from 'three'

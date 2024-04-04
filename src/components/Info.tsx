@@ -3,7 +3,7 @@ import { useSnapshot } from "valtio";
 import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
-import Brain3 from "../models/Brain3";
+import Brain from "../models/old/Brain";
 import Bio from "../pages/Bio";
 // import Intro from "../components/Intro";
 // import Desc from "../components/Desc";

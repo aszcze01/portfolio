@@ -8,7 +8,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import BrainScene from '../assets/3D/brain.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
-import PostProcessingEffects from '../components/Effects'
+import PostProcessingEffects from '../../components/Effects'
 
 type GLTFResult = GLTF & {
   nodes: {
