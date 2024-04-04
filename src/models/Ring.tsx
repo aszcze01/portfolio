@@ -18,7 +18,7 @@ export const Ring = ({ rotation }: Props) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={1.1} position={[0, 20, 0]} rotation={rotation}>
+    <mesh ref={meshRef} scale={2} position={[0, 20, 0]} rotation={rotation}>
       <torusGeometry args={[100, 1, 2, 128]} />
       <FakeGlowMaterial />
     </mesh>

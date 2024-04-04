@@ -8,7 +8,10 @@ export const state = proxy({
     isPanelInfo: true,
     isPanelHacked: false,
     isObjectData: false,
-    isBio: false
+    isBio: false,
+    isBioLinkHovered: false,
+    isWorkLinkHovered: false,
+    isContactLinkHovered: false,
 })
 
 export default state

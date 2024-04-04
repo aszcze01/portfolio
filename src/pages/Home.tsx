@@ -3,7 +3,7 @@ import { useSnapshot } from "valtio";
 import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
-import Brain3 from "../models/Brain3";
+import Brain from "../models/Brain";
 import Bio from "./Bio";
 import Intro from "../components/Intro";
 import Desc from "../components/Desc";
@@ -30,7 +30,7 @@ const Home = () => {
               {snap.isObjectData && <ScanMenu />}
             </div>
             <div className="primaryPanel">
-              {snap.isObjectData && <Brain3 />}
+              {snap.isObjectData && <Brain />}
               {snap.isEarthVisible && <Earth />}
               {/* {snap.isBio && <Bio />} */}
             </div>
