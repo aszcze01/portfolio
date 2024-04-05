@@ -6,16 +6,17 @@ import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import PaletteScene from '../assets/3D/palette.glb'
+import PaletteScene from '../assets/3D/palette-transformed.glb'
 import { Canvas } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 import { useFrame } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
-    nodes: {
-      defaultMaterial003: THREE.Mesh
-    }
+  nodes: {
+    defaultMaterial003: THREE.Mesh
   }
+  materials: {}
+}
 
 const Palette = (props: JSX.IntrinsicElements['group']) => {
 
@@ -23,25 +24,13 @@ const Palette = (props: JSX.IntrinsicElements['group']) => {
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
 
-  const meshRef = useRef<THREE.Mesh>(null!)
+  const group = useRef<THREE.Group>(null!)
 
-  useFrame((_, delta) => (meshRef.current.rotation.y += delta))
+  useFrame((_, delta) => (group.current.rotation.y += delta))
 
   return (
-    <group ref={meshRef} {...props} dispose={null}>
-      <group position={[4.373, -0.631, -0.279]} rotation={[-1.219, -0.019, -0.043]} scale={0.125}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <mesh
-              geometry={nodes.defaultMaterial003.geometry}
-              material={material}
-              position={[-0.171, 0.031, 0.173]}
-              rotation={[-0.722, -0.173, 0.019]}
-              scale={0.444}
-            />
-          </group>
-        </group>
-      </group>
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.defaultMaterial003.geometry} material={material} position={[2.225, 1.521, 0.003]} rotation={[-1.948, -0.159, -0.027]} scale={5.531} />
     </group>
   )
 }
@@ -51,10 +40,8 @@ useGLTF.preload(PaletteScene)
 export default () => (
     <Canvas
         orthographic
-        // shadows
         camera={{
             position: [0, 0, 100],
-            // rotation: [0, -Math.PI / 2, -Math.PI / 2],
         }}
     >
         <OrbitControls

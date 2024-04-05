@@ -4,11 +4,15 @@ import state from "../store";
 const Header = () => {
   const handleClick = () => {
     state.isIntro = false;
+    state.isLoader = false;
     state.isObjectData = false;
     state.isEarthVisible = true;
     state.isPanelHacked = true;
     state.isDesc = true;
     state.isPanelInfo = true;
+    state.isContactLinkHovered = false;
+    state.isWorkLinkHovered = false;
+    state.isBioLinkHovered = false;
   };
 
   return (

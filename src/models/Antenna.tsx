@@ -6,29 +6,34 @@ import * as THREE from 'three'
 import { Suspense, useEffect, useRef } from 'react'
 import { useGLTF, useAnimations, OrbitControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import AntennaScene from '../assets/3D/antenna_anim.glb'
+import AntennaScene from '../assets/3D/antenna_anim-transformed.glb'
 import { Canvas } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 
 type GLTFResult = GLTF & {
-    nodes: {
-      dish: THREE.Mesh
-      pole: THREE.Mesh
-      pivot: THREE.Mesh
-      Cylinder: THREE.Mesh
-    }
+  nodes: {
+    dish: THREE.Mesh
+    pole: THREE.Mesh
+    pivot: THREE.Mesh
   }
-  
-  type ActionName = 'dishAction' | 'pivotAction'
-  type GLTFActions = Record<ActionName, THREE.AnimationAction>
+  materials: {}
+  animations: GLTFAction[]
+}
 
+type ActionName = 'dishAction' | 'pivotAction'
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
+// type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
+  
 const Antenna = (props: JSX.IntrinsicElements['group']) => {
 
   const group = useRef<THREE.Group>(null!)
 
   const { nodes, animations } = useGLTF(AntennaScene) as GLTFResult
   
-  const { actions, mixer } = useAnimations<GLTFActions>(animations, group);
+  const { actions, mixer } = useAnimations(animations, group);
+  
   useEffect(() => {
     actions.dishAction.play();
     actions.pivotAction.play();
@@ -36,38 +41,12 @@ const Antenna = (props: JSX.IntrinsicElements['group']) => {
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
 
-//   const meshRef = useRef<THREE.Mesh>(null!)
-  
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh
-          name="dish"
-          geometry={nodes.dish.geometry}
-          material={material}
-          position={[0.021, 4.522, 0.683]}
-        />
-        <mesh
-          name="pole"
-          geometry={nodes.pole.geometry}
-          material={material}
-          position={[0.012, 3.605, 0.005]}
-        />
-        <mesh
-          name="pivot"
-          geometry={nodes.pivot.geometry}
-          material={material}
-          position={[0.013, 4.567, 0.009]}
-          rotation={[-1.309, 0, -1.549]}
-        />
-        <mesh
-          name="Cylinder"
-          geometry={nodes.Cylinder.geometry}
-          material={material}
-          position={[-0.008, 0.395, 0.045]}
-          rotation={[-0.099, 0.435, -0.733]}
-          scale={-0.06}
-        />
+        <mesh name="dish" geometry={nodes.dish.geometry} material={material} position={[0.021, 4.522, 0.683]} />
+        <mesh name="pole" geometry={nodes.pole.geometry} material={material} position={[0.012, 3.605, 0.005]} />
+        <mesh name="pivot" geometry={nodes.pivot.geometry} material={material} position={[0.013, 4.567, 0.009]} rotation={[-1.309, 0, -1.549]} />
       </group>
     </group>
   )

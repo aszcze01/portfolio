@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import { Suspense, useEffect, useRef } from 'react'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import BrainScene from '../assets/3D/brain-low2.glb'
+import BrainScene from '../assets/3D/brain-low2-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 import { Ring } from './Ring'
@@ -22,6 +22,7 @@ type GLTFResult = GLTF & {
     leftHemisphere: THREE.Mesh
   }
   materials: {}
+  // animations: GLTFAction[]
 }
 
 const Brain = (props: JSX.IntrinsicElements['group']) => {
@@ -57,38 +58,10 @@ const Brain = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh
-        ref={brainstem}
-        geometry={nodes.cerebellum.geometry}
-        material={material}
-        position={[0, 0, -0.064]}
-        rotation={[1.584, 0, 0]}
-        scale={3.586}
-      />
-      <mesh
-        ref={brainstem}
-        geometry={nodes.brainstem.geometry}
-        material={material}
-        position={[0, 0, -0.064]}
-        rotation={[1.584, 0, 0]}
-        scale={3.586}
-      />
-      <mesh
-        ref={rightHemisphere}
-        geometry={nodes.rightHemisphere.geometry}
-        material={material}
-        position={[0, 0, -0.064]}
-        rotation={[1.584, 0, 0]}
-        scale={3.586}
-      />
-      <mesh
-        ref={leftHemisphere}
-        geometry={nodes.leftHemisphere.geometry}
-        material={material}
-        position={[0, 0, -0.064]}
-        rotation={[1.584, 0, 0]}
-        scale={3.586}
-      />
+      <mesh geometry={nodes.cerebellum.geometry} material={material} position={[0, 0, -0.064]} rotation={[1.584, 0, 0]} scale={3.586} />
+      <mesh ref={brainstem} geometry={nodes.brainstem.geometry} material={material} position={[0, 0, -0.064]} rotation={[1.584, 0, 0]} scale={3.586} />
+      <mesh ref={rightHemisphere} geometry={nodes.rightHemisphere.geometry} material={material} position={[0, 0, -0.064]} rotation={[1.584, 0, 0]} scale={3.586} />
+      <mesh ref={leftHemisphere} geometry={nodes.leftHemisphere.geometry} material={material} position={[0, 0, -0.064]} rotation={[1.584, 0, 0]} scale={3.586} />
     </group>
   )
 }

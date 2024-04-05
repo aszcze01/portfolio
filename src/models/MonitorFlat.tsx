@@ -10,79 +10,32 @@ import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
 import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import MonitorScene from '../assets/3D/office_monitor__workstation_monitor.glb'
+import MonitorScene from '../assets/3D/monitor_flat-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 
 type GLTFResult = GLTF & {
   nodes: {
-    SketchUp_material_0: THREE.Mesh
     group_0_Material001_0: THREE.Mesh
-    group_0001_Material001_0: THREE.Mesh
-    group_0002_layar_0: THREE.Mesh
-    SketchUp001_Material002_0: THREE.Mesh
-    SketchUp003_Material002_0: THREE.Mesh
-    SketchUp002_Material003_0: THREE.Mesh
+    SketchUp_material_0: THREE.Mesh
     SketchUp004_Material003_0: THREE.Mesh
   }
+  materials: {}
 }
 
-const MonitorFlat = (props: JSX.IntrinsicElements['group']) => {
+  const MonitorFlat = (props: JSX.IntrinsicElements['group']) => {
   const { nodes } = useGLTF(MonitorScene) as GLTFResult
-  const meshRef = useRef<THREE.Mesh>(null!)
-
-  useFrame((_, delta) => (meshRef.current.rotation.y += delta))
+  const group = useRef<THREE.Group>(null!)
+ 
+  useFrame((_, delta) => (group.current.rotation.y += delta))
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
   
   return (
-    <group ref={meshRef} {...props} dispose={null}>
-      <group position={[2.803, -38.914, -25.18]} rotation={[-Math.PI / 2, 0, 0]} scale={27.464}>
-        <mesh geometry={nodes.SketchUp_material_0.geometry} material={material} />
-        <mesh
-          geometry={nodes.group_0_Material001_0.geometry}
-          material={material}
-          position={[2.722, 0.301, 10.79]}
-        />
-        <mesh
-          geometry={nodes.group_0001_Material001_0.geometry}
-          material={material}
-          position={[2.442, 6.74, 10.749]}
-        />
-        <mesh
-          geometry={nodes.group_0002_layar_0.geometry}
-          material={material}
-          position={[3.567, -0.002, 11.668]}
-        />
-      </group>
-      <mesh
-        geometry={nodes.SketchUp001_Material002_0.geometry}
-        material={material}
-        position={[0.878, -35.716, -9.286]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={27.464}
-      />
-      <mesh
-        geometry={nodes.SketchUp003_Material002_0.geometry}
-        material={material}
-        position={[3.454, 183.431, -24.237]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={27.464}
-      />
-      <mesh
-        geometry={nodes.SketchUp002_Material003_0.geometry}
-        material={material}
-        position={[0.878, -35.716, -9.286]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={27.464}
-      />
-      <mesh
-        geometry={nodes.SketchUp004_Material003_0.geometry}
-        material={material}
-        position={[0.878, -35.716, -9.286]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={27.464}
-      />
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.group_0_Material001_0.geometry} material={material} position={[12.609, 52.176, -1.644]} rotation={[-Math.PI / 2, 0, 0]} scale={4.638} />
+      <mesh geometry={nodes.SketchUp_material_0.geometry} material={material} position={[-0.012, 2.136, -0.248]} rotation={[-Math.PI / 2, 0, 0]} scale={4.638} />
+      <mesh geometry={nodes.SketchUp004_Material003_0.geometry} material={material} position={[-0.337, 2.676, 2.436]} rotation={[-Math.PI / 2, 0, 0]} scale={4.638} />
     </group>
   )
 }
@@ -92,9 +45,7 @@ useGLTF.preload(MonitorScene)
 export default () => (
     <Canvas
         orthographic
-        // shadows
         camera={{
-        // zoom: -20,
         position: [0, 0, 200],
         }}
     >
@@ -107,8 +58,8 @@ export default () => (
         <directionalLight position={[0, 0, 10]} intensity={0.9} />
         <directionalLight position={[0, 0, -10]} intensity={0.9} />
         <PostProcessingEffects />
-        <Suspense fallback={<Loader />}>
-        <mesh scale={0.1} position={[0, -10, 0]}>
+        <Suspense fallback={null}>
+        <mesh scale={0.6} position={[0, -10, 0]}>
             <MonitorFlat />
         </mesh>
         </Suspense>

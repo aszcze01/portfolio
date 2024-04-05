@@ -7,9 +7,9 @@ Title: Reflex camera
 */
 
 import * as THREE from 'three'
-import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import CameraScene from '../assets/3D/reflex_camera.glb'
+import CameraScene from '../assets/3D/camera-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 import { Suspense, useRef } from 'react'
@@ -17,27 +17,20 @@ import { Suspense, useRef } from 'react'
 type GLTFResult = GLTF & {
   nodes: {
     Object_2: THREE.Mesh
-    Object_3: THREE.Mesh
   }
-  materials: {
-    camera: THREE.MeshStandardMaterial
-    objective: THREE.MeshStandardMaterial
-  }
+  materials: {}
 }
 
 const Camera = (props: JSX.IntrinsicElements['group']) => {
   const { nodes } = useGLTF(CameraScene) as GLTFResult
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
-  const meshRef = useRef<THREE.Mesh>(null!)
+  const group = useRef<THREE.Group>(null!)
 
-  useFrame((_, delta) => (meshRef.current.rotation.y += delta))
+  useFrame((_, delta) => (group.current.rotation.y += delta))
 
   return (
-    <group ref={meshRef} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh geometry={nodes.Object_2.geometry} material={material} />
-        <mesh geometry={nodes.Object_3.geometry} material={material} />
-      </group>
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.Object_2.geometry} material={material} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }
@@ -47,7 +40,6 @@ useGLTF.preload(CameraScene)
 export default () => (
     <Canvas
         orthographic
-        // shadows
         camera={{
         position: [0, 0, 200],
         }}

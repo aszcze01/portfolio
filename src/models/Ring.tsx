@@ -4,7 +4,7 @@ import {useFrame} from "@react-three/fiber";
 import * as THREE from 'three'
 import { Euler } from 'three'
 
-interface Props {
+type Props =  {
     rotation: Euler | undefined
 }
 

@@ -9,7 +9,7 @@ Title: Retro Computer Monitor
 import * as THREE from 'three'
 import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import MonitorCRTScene from '../assets/3D/retro_computer_monitor.glb'
+import MonitorCRTScene from '../assets/3D/monitor_crt-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 import { Suspense, useRef } from 'react'
@@ -17,33 +17,23 @@ import { Suspense, useRef } from 'react'
 type GLTFResult = GLTF & {
   nodes: {
     Object_4: THREE.Mesh
-    Object_5: THREE.Mesh
-    Object_7: THREE.Mesh
-    Object_9: THREE.Mesh
-    Object_11: THREE.Mesh
-    Object_13: THREE.Mesh
-    Object_15: THREE.Mesh
-    Object_16: THREE.Mesh
-    Object_18: THREE.Mesh
-    Object_19: THREE.Mesh
-    Object_21: THREE.Mesh
-    Object_22: THREE.Mesh
   }
+  materials: {}
 }
 
 const MonitorCRT = (props: JSX.IntrinsicElements['group']) => {
+
   const { nodes } = useGLTF(MonitorCRTScene) as GLTFResult
 
-  const meshRef = useRef<THREE.Mesh>(null!)
+  const group = useRef<THREE.Group>(null!)
 
-  useFrame((_, delta) => (meshRef.current.rotation.y -= delta))
+  useFrame((_, delta) => (group.current.rotation.y -= delta))
+
+  const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
 
   return (
-    <group ref={meshRef} {...props} dispose={null}>
-      <group scale={[1.905, 2.198, 2.393]}>
-        <mesh geometry={nodes.Object_4.geometry} material={new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })} />
-        <mesh geometry={nodes.Object_5.geometry} material={new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })} />
-      </group>
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.Object_4.geometry} material={material} scale={[1.905, 2.198, 2.393]} />
     </group>
   )
 }
@@ -53,9 +43,7 @@ useGLTF.preload(MonitorCRTScene)
 export default () => (
     <Canvas
         orthographic
-        // shadows
         camera={{
-        // zoom: -20,
         position: [0, 0, 100],
         }}
     >
@@ -68,7 +56,7 @@ export default () => (
         <directionalLight position={[0, 0, 10]} intensity={0.9} />
         <directionalLight position={[0, 0, -10]} intensity={0.9} />
         <PostProcessingEffects />
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={null}>
         <mesh scale={15} position={[0, 0, 0]}>
             <MonitorCRT />
         </mesh>

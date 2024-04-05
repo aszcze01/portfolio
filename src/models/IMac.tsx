@@ -9,26 +9,16 @@ Title: Imac G3 - Upgraded
 import * as THREE from 'three'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import MacScene from '../assets/3D/imac.glb'
+import MacScene from '../assets/3D/monitor_mac-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 import { Suspense, useRef } from 'react'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Object_4: THREE.Mesh
-    Object_6: THREE.Mesh
-    Object_7: THREE.Mesh
-    Object_8: THREE.Mesh
-    Object_10: THREE.Mesh
-    Object_12: THREE.Mesh
-    Object_13: THREE.Mesh
     Object_15: THREE.Mesh
-    Object_16: THREE.Mesh
-    Object_18: THREE.Mesh
-    Object_20: THREE.Mesh
-    Object_22: THREE.Mesh
   }
+  materials: {}
 }
 
 const IMac = (props: JSX.IntrinsicElements['group']) => {
@@ -37,38 +27,13 @@ const IMac = (props: JSX.IntrinsicElements['group']) => {
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
 
-  const meshRef = useRef<THREE.Mesh>(null!)
+  const group = useRef<THREE.Group>(null!)
 
-  useFrame((_, delta) => (meshRef.current.rotation.y += delta))
+  useFrame((_, delta) => (group.current.rotation.y += delta))
 
   return (
-    <group ref={meshRef} {...props} dispose={null}>
-      <group position={[-0.454, 0, 0.335]} rotation={[-Math.PI / 2, 0, 0]} scale={0.039}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <mesh
-            geometry={nodes.Object_4.geometry}
-            material={material}
-          />
-          <mesh
-            geometry={nodes.Object_15.geometry}
-            material={material}
-          />
-          <mesh
-            geometry={nodes.Object_16.geometry}
-            material={material}
-          />
-          <mesh
-            geometry={nodes.Object_20.geometry}
-            material={material}
-          />
-          <mesh
-            geometry={nodes.Object_22.geometry}
-            material={material}
-            position={[6.908, 8.39, -8.668]}
-            scale={1.01}
-          />
-        </group>
-      </group>
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.Object_15.geometry} material={material} position={[-1.724, 4.642, -0.045]} />
     </group>
   )
 }
@@ -78,7 +43,6 @@ useGLTF.preload(MacScene)
 export default () => (
     <Canvas
         orthographic
-        // shadows
         camera={{
         position: [0, 0, 500],
         }}
@@ -93,7 +57,7 @@ export default () => (
         <directionalLight position={[0, 0, -10]} intensity={0.9} />
         <PostProcessingEffects />
         <Suspense fallback={null}>
-            <mesh scale={110} position={[0, -20, 0]}>
+            <mesh scale={5} position={[0, -20, 0]}>
                 <IMac />
             </mesh>
         </Suspense>
