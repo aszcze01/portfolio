@@ -87,9 +87,9 @@ export default () => (
       <PostProcessingEffects />
       <Suspense fallback={null}>
 
-        <Ring rotation={[Math.PI / 2, 0, 0]} />
-        <Ring rotation={[0, Math.PI / 2, 0]} />
-        <Ring rotation={[0, 0, Math.PI / 2]} />
+        <Ring rotation={new THREE.Euler(Math.PI / 2, 0, 0)} />
+        <Ring rotation={new THREE.Euler(0, Math.PI / 2, 0)} />
+        <Ring rotation={new THREE.Euler(0, 0, Math.PI / 2)} />
 
           <mesh scale={600} position={[0, -50, 0]}>
               <Brain />

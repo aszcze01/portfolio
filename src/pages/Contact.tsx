@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-import { slideIn } from "../utils/motion";
+// import { slideIn } from "../utils/motion";
 import Antenna from "../models/Antenna";
 
 /**
@@ -87,10 +87,11 @@ const Contact = (): JSX.Element => {
         <div className="antenna">
           <Antenna />
         </div>
-        <motion.div
+        {/* <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="contactForm__container"
-        >
+        > */}
+        <div>
           {/* <p className="contactForm__title">Get in touch</p> */}
           <h3 className="contactForm__subtitle">Make contact!</h3>
 
@@ -137,7 +138,8 @@ const Contact = (): JSX.Element => {
               {loading ? "Sending..." : "Send"}
             </button>
           </form>
-        </motion.div>
+        {/* </motion.div> */}
+        </div>
 
         {/* <motion.div
             variants={slideIn("right", "tween", 0.2, 1)}

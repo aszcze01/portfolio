@@ -35,8 +35,8 @@ const Antenna = (props: JSX.IntrinsicElements['group']) => {
   const { actions, mixer } = useAnimations(animations, group);
   
   useEffect(() => {
-    actions.dishAction.play();
-    actions.pivotAction.play();
+    actions.dishAction!.play();
+    actions.pivotAction!.play();
   }, [mixer]);
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })

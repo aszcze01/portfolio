@@ -1,14 +1,15 @@
-import Earth from "../components/Earth";
+// @ts-nocheck
+import Earth from "../Earth";
 import { useSnapshot } from "valtio";
-import state from "../store";
-import RandomizeText from "../components/RandomizeText";
-import ScanMenu from "../components/ScanMenu";
+import state from "../../store";
+import RandomizeText from "../RandomizeText";
+import ScanMenu from "../ScanMenu";
 import Brain from "../models/old/Brain";
-import Bio from "../pages/Bio";
+import Bio from "../../pages/Bio";
 // import Intro from "../components/Intro";
 // import Desc from "../components/Desc";
-import { EarthPanelText, ObjectDataText } from "../datasets/PanelText";
-import Desc from "./Desc";
+import { EarthPanelText, ObjectDataText } from "../../datasets/PanelText";
+import Desc from "../Desc";
 
 const Info = () => {
   const snap = useSnapshot(state);

@@ -9,7 +9,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // import  {BadTVShader} from '../effects/BadTVShader.js'
 // import  {StaticShader} from '../effects/StaticShader'
 // import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+// @ts-ignore
 import { UnrealBloomPass } from "../effects/UnrealBloomPass.js";
+// @ts-ignore
 import { RGBShiftShader } from "../effects/RGBShiftShader";
 import { GlitchPass } from "three/addons/postprocessing/GlitchPass.js";
 import { FilmPass } from "three/addons/postprocessing/FilmPass.js";
@@ -18,7 +20,7 @@ import state from "../store";
 import { useSnapshot } from "valtio";
 // import Papa from "papaparse";
 // import UFOData from "../datasets/ufo.csv";
-import { UfoModel } from "../models/Ufo";
+// import { UfoModel } from "../models/Ufo";
 import * as THREE from "three";
 import { GetCSVData } from "../components/GetCSVData";
 import { useMediaQuery } from "../hooks/useMediaQuery.js";
@@ -42,7 +44,7 @@ const Earth = (props: {
   ringRepeatPeriod?: number;
   ringAltitude?: number | {};
   ringColor?: () => string;
-  pointsData: any;
+  pointsData?: any;
   pointAltitude?: string | number;
   pointColor?: string;
   pointRadius?: number;
@@ -170,7 +172,7 @@ const Earth = (props: {
     return new THREE.Mesh(ufoGeometry, ufoMaterial);
   }, [globeRadius]);
 
-  const getTooltip = (d) => `
+  const getTooltip = (d: any) => `
       <div style="cursor: pointer;text-align: center; background-color: ${blackColor}; color: ${greenColor}; border-radius: 0.5rem; border: 1px solid green; padding: 1rem; text-transform: capitalize; font-size: .8rem;">
         <div>Scan data:</div>
         <div>Status: corrupted</div>
@@ -181,7 +183,7 @@ const Earth = (props: {
 
   const ufosData = GetCSVData();
 
-  const handleObjectClick = (d) => {
+  const handleObjectClick = (d: any) => {
     globeRef.current.pointOfView(
       {
         lat: d.latitude,

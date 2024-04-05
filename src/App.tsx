@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import state from "./store";
 import Home from "./pages/Home";
 import Bio from "./pages/Bio";
-import Info from "./components/Info";
+import Info from "./components/old/Info";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 

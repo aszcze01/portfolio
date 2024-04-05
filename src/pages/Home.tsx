@@ -4,11 +4,12 @@ import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
 import Brain from "../models/Brain";
-import Bio from "./Bio";
+// import Bio from "./Bio";
 import Intro from "../components/Intro";
 import Desc from "../components/Desc";
 import { EarthPanelText, ObjectDataText } from "../datasets/PanelText";
-import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
+// import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
+import { motion } from "framer-motion"
 
 const Home = () => {
   const snap = useSnapshot(state);
@@ -29,11 +30,15 @@ const Home = () => {
               {snap.isObjectData && <RandomizeText words={ObjectDataText} />}
               {snap.isObjectData && <ScanMenu />}
             </div>
-            <div className="primaryPanel">
+            <motion.div
+              animate={{ scale: 1 }}
+              initial={{ scale: 0 }}
+              className="primaryPanel"
+            >
               {snap.isObjectData && <Brain />}
               {snap.isEarthVisible && <Earth />}
               {/* {snap.isBio && <Bio />} */}
-            </div>
+            </motion.div>
           </section>
         {/* </EqualHeightElement> */}
 
