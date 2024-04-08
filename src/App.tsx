@@ -7,6 +7,7 @@ import Bio from "./pages/Bio";
 import Info from "./pages/Info";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
+import NotFound from "./pages/NotFound";
 
 function App(): JSX.Element {
   // const snap = useSnapshot(state);
@@ -24,6 +25,7 @@ function App(): JSX.Element {
               <Route path="/info" element={<Info />} />
               <Route path="/bio" element={<Bio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path='*' element={<NotFound />}/>
             </Routes>
   
         </BrowserRouter>

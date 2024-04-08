@@ -1,0 +1,22 @@
+@import "./mixins/respond-to";
+@import "./vars.scss";
+@import "./mixins/fontStyles";
+
+.notFound {
+    @include Jura;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: $borderRadius;
+    &__ufo {
+        width: 100%;
+        height: 400px;
+    }
+    ul {
+        li {
+            display: inline-block;
+            margin-right: 1rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
