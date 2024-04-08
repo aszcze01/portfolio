@@ -1,5 +1,7 @@
 import Globe from "react-globe.gl";
 import texture from "../assets/earth-green-3.jpg";
+import { useNavigate } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 // import ThreeGlobe from 'three-globe'
@@ -60,6 +62,8 @@ const Earth = (props: {
   onLabelClick?: () => void;
 }): JSX.Element => {
   const snap = useSnapshot(state);
+
+  let navigate = useNavigate();
 
   const lat = 51.759445;
   const lng = 19.457216;
@@ -155,9 +159,12 @@ const Earth = (props: {
     //     altitude: 4
     //   }, 1000)
     // setPointAltitude("zero")
-    state.isPanelInfo = false;
-    state.isObjectData = true;
-    state.isEarthVisible = false;
+    navigate("/info");
+    // state.isIntro = false;
+    // state.isLoader = false;
+    // state.isPanelInfo = true;
+    // state.isObjectData = true;
+    // state.isEarthVisible = false;
   };
 
   const ufoObject = useMemo(() => {

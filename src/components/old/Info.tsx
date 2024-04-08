@@ -9,7 +9,7 @@ import Bio from "../../pages/Bio";
 // import Intro from "../components/Intro";
 // import Desc from "../components/Desc";
 import { EarthPanelText, ObjectDataText } from "../../datasets/PanelText";
-import Desc from "../Desc";
+import Desc from "./Desc";
 
 const Info = () => {
   const snap = useSnapshot(state);

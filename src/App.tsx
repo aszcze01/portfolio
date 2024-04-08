@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import state from "./store";
 import Home from "./pages/Home";
 import Bio from "./pages/Bio";
-import Info from "./components/old/Info";
+import Info from "./pages/Info";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 
@@ -29,7 +29,7 @@ function App(): JSX.Element {
         </BrowserRouter>
       </main>
 
-      <footer></footer>
+      {/* <footer></footer> */}
         <div className="content--canvas"></div>
     </>
   );

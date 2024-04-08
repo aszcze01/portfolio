@@ -21,6 +21,7 @@ const Header = () => {
         <Link to="/">ANDRZEJ SZCZEPANIK - MIND SCAN</Link>
       </h1>
       <nav className="headerLinks">
+        <Link to="/info">INFO</Link>
         <Link to="/bio">BIO</Link>
         <Link to="/contact">CONTACT</Link>
       </nav>

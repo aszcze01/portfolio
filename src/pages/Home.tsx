@@ -2,23 +2,21 @@ import Earth from "../components/Earth";
 import { useSnapshot } from "valtio";
 import state from "../store";
 import RandomizeText from "../components/RandomizeText";
-import ScanMenu from "../components/ScanMenu";
-import Brain from "../models/Brain";
+// import ScanMenu from "../components/ScanMenu";
+// import Brain from "../models/Brain";
 // import Bio from "./Bio";
 import Intro from "../components/Intro";
 import Desc from "../components/Desc";
-import { EarthPanelText, ObjectDataText } from "../datasets/PanelText";
+import { EarthPanelText } from "../datasets/PanelText";
+import { EarthDescText } from "../datasets/DescText";
 // import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 
 const Home = () => {
   const snap = useSnapshot(state);
+  const { isObjectData, isPanelInfo, isEarthVisible, isLoader, isDesc } = snap;
 
-  // const secondaryPanel = document.querySelector(".secondaryPanel");
-//   const primaryPanel = document.querySelector(".primaryPanel");
-  //   snap.isDesc && primaryPanel?.classList.add("primaryPanel__wide");
-  //   !snap.isEarthVisible && primaryPanel?.classList.remove("primaryPanel__wide");
-//   snap.isObjectData && primaryPanel?.classList.add("primaryPanel__narrow");
+  const sequence = [EarthDescText, 3000]
 
   return (
     <div className="container">
@@ -26,26 +24,36 @@ const Home = () => {
         {/* <EqualHeightElement name="device" placeholder={false}> */}
           <section className="device__alien">
             <div className="secondaryPanel">
-              {snap.isPanelInfo && <RandomizeText words={EarthPanelText} />}
-              {snap.isObjectData && <RandomizeText words={ObjectDataText} />}
-              {snap.isObjectData && <ScanMenu />}
+              {isPanelInfo && <RandomizeText words={EarthPanelText} />}
+              {/* {isObjectData && <RandomizeText words={ObjectDataText} />} */}
+              {/* {isObjectData && <ScanMenu />} */}
             </div>
-            <motion.div
-              animate={{ scale: 1 }}
-              initial={{ scale: 0 }}
+            <div
+              // initial={isObjectData && ({ opacity: 0, scale: 0.5 })}
+              // animate={isObjectData && ({ opacity: 1, scale: 1 })}
+              // transition={{
+              //   duration: 3,
+              //   ease: [0, 0.71, 0.2, 1.01],
+              //   scale: {
+              //     type: "spring",
+              //     damping: 5,
+              //     stiffness: 100,
+              //     restDelta: 0.001
+              //   }
+              // }}
               className="primaryPanel"
             >
-              {snap.isObjectData && <Brain />}
-              {snap.isEarthVisible && <Earth />}
-              {/* {snap.isBio && <Bio />} */}
-            </motion.div>
+              {/* {isObjectData && <Brain />} */}
+              {isEarthVisible && <Earth />}
+              {/* {isBio && <Bio />} */}
+            </div>
           </section>
         {/* </EqualHeightElement> */}
 
         {/* <EqualHeightElement name="device" placeholder={false}> */}
           <section className="device__human">
-            {snap.isLoader && <Intro />}
-            {snap.isDesc && <Desc />}
+            {isLoader && <Intro />}
+            {isDesc && <Desc sequence={sequence} />}
           </section>
         {/* </EqualHeightElement> */}
       {/* </EqualHeight> */}

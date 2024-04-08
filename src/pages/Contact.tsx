@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 // import { slideIn } from "../utils/motion";
@@ -82,16 +82,16 @@ const Contact = (): JSX.Element => {
   };
 
   return (
-    <>
+    // <>
       <div className="contactForm">
         <div className="antenna">
           <Antenna />
         </div>
-        {/* <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
+        <motion.div
+          // variants={slideIn("left", "tween", 0.2, 1)}
           className="contactForm__container"
-        > */}
-        <div>
+        >
+        {/* <div> */}
           {/* <p className="contactForm__title">Get in touch</p> */}
           <h3 className="contactForm__subtitle">Make contact!</h3>
 
@@ -138,17 +138,10 @@ const Contact = (): JSX.Element => {
               {loading ? "Sending..." : "Send"}
             </button>
           </form>
-        {/* </motion.div> */}
+        </motion.div>
         </div>
 
-        {/* <motion.div
-            variants={slideIn("right", "tween", 0.2, 1)}
-            className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-        >
-            <EarthCanvas />
-        </motion.div> */}
-      </div>
-    </>
+    // </>
   );
 };
 
