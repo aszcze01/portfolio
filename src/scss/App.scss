@@ -208,13 +208,33 @@ main {
             float: right;
           }
           &__link {
+            position: relative;
             margin: 0.6rem 0;
-            border-bottom: 1px solid $grey;
+            // border-bottom: 1px solid $grey;
             @include respond-to(desktop) {
               margin-right: 1rem;
             }
             &:last-of-type {
               margin-right: 0;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              width: 100%;
+              height: 1px;
+              background: $grey;
+            }
+            &:hover::after {
+              background: gold;
+            }
+            &--disabled {
+              cursor: default;
+              color: #888;
+              &:after {
+                display: none;
+              }
             }
           }
           span {

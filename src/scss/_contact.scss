@@ -21,6 +21,11 @@
   h3 {
     font-size: 1.5em;
     color: $grey;
+    margin: 1rem 0;
+  }
+  h4 {
+    color: $grey;
+    margin-top: 0;
   }
   &__container,
   &__form {

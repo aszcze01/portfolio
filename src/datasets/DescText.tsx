@@ -14,7 +14,7 @@ Alien Watch Agency Log - 0000020240320
 
 CONFIDENTIAL
 
-Employees of the Agency extracted as much as they could from incomplete data. Below, we provide a transcription in the form of how Object 2137001 could tell about himself:
+Our Agents extracted as much as they could from incomplete data. Below, we provide a transcription in the form of how Object 2137001 could tell about himself:
 
 While working as a Frontend Developer for the last 9 years, I had the opportunity to implement web projects for companies such as: Kellogg's, Geberit, Coty, Wella Company, mBank, as well as mailing campaigns. Most of it was implemented in React with a .NET backend, as well as PHP. I was also involved in designing some UI elements, graphically processing projects in Photoshop and Figma (and sometimes even in Excel). I have the Contentful Certified Professional Exam certificate.
 In my free time, I like to read a book or listen to an audiobook, I also do amateur gardening, I play the guitar, and from time to time I build an electronic device.

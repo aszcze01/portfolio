@@ -14,9 +14,9 @@ const ScanMenu = () => {
         >
           <Link to="/bio">BIO</Link>
         </span>
-        
+
         <span
-          className="scanMenu scanMenu__link"
+          className="scanMenu scanMenu__link scanMenu__link--disabled"
           onMouseOver={() => (state.isWorkLinkHovered = true)}
           onMouseOut={() => (state.isWorkLinkHovered = false)}
         >

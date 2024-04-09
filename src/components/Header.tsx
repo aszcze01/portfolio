@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <h1 className="header__title" onClick={handleClick}>
-        <Link to="/">ANDRZEJ SZCZEPANIK - MIND SCAN</Link>
+        <Link to="/">ANDRZEJ SZCZEPANIK - HOME BASE</Link>
       </h1>
       <nav className="headerLinks">
         <Link to="/info">INFO</Link>

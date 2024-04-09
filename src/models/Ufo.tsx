@@ -8,35 +8,33 @@ import * as THREE from 'three'
 import { Suspense, useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import UfoScene from '../assets/3D/ufo-transformed.glb'
+import UfoScene from '../assets/3D/ufo_anim-transformed.glb'
 import { Canvas } from '@react-three/fiber'
 import PostProcessingEffects from '../components/Effects'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Object_8: THREE.Mesh
-    Object_9: THREE.Mesh
-    Object_4: THREE.Mesh
     Object_6: THREE.Mesh
   }
   materials: {}
   animations: GLTFAction[]
 }
 
-type ActionName = 'Sketchfab_modelAction' | 'Object_6Action.001'
+type ActionName = 'Action'
 interface GLTFAction extends THREE.AnimationClip {
   name: ActionName
 }
-// type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
 
 const Ufo = (props: JSX.IntrinsicElements['group']) => {
+
   const group = useRef<THREE.Group>(null!)
+
   const { nodes, animations } = useGLTF(UfoScene) as GLTFResult
 
   const { actions, mixer } = useAnimations(animations, group);
   
   useEffect(() => {
-    actions.Sketchfab_modelAction!.play();
+    actions.Action!.play();
   }, [mixer]);
 
   const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, opacity: 0.85, transparent: true })
@@ -44,22 +42,7 @@ const Ufo = (props: JSX.IntrinsicElements['group']) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
-          <group name="root">
-            <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
-              <group name="Cylinder001_5" scale={[4.348, 1, 4.348]}>
-                <mesh name="Object_8" geometry={nodes.Object_8.geometry} material={material} />
-                <mesh name="Object_9" geometry={nodes.Object_9.geometry} material={material} />
-              </group>
-              <group name="Cylinder_2">
-                <mesh name="Object_4" geometry={nodes.Object_4.geometry} material={material} />
-              </group>
-              <group name="Sphere_3" position={[0, 0.24, 0]} scale={2.406}>
-                <mesh name="Object_6" geometry={nodes.Object_6.geometry} material={material} />
-              </group>
-            </group>
-          </group>
-        </group>
+        <mesh name="Object_6" geometry={nodes.Object_6.geometry} material={material} position={[2.85, -0.08, 5.141]} rotation={[Math.PI, 0, Math.PI]} />
       </group>
     </group>
   )
@@ -79,7 +62,7 @@ export default () => (
       <directionalLight position={[0, 0, -10]} intensity={0.7} />
       <PostProcessingEffects />
       <Suspense fallback={null}>
-          <mesh scale={8} position={[0, -150, 0]} rotation={[0, 0, 0]}>
+          <mesh scale={40} position={[0, 0, 0]} rotation={[0, 0, 0]}>
               <Ufo />
           </mesh>
       </Suspense>

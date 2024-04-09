@@ -93,7 +93,8 @@ const Contact = (): JSX.Element => {
         >
         {/* <div> */}
           {/* <p className="contactForm__title">Get in touch</p> */}
-          <h3 className="contactForm__subtitle">Make contact!</h3>
+          <h3 className="contactForm__subtitle">Make first contact!</h3>
+          <h4>(or another one)</h4>
 
           <form
             ref={formRef}
