@@ -16,6 +16,7 @@ interface Store {
     isContactPage: boolean
     isBioPage: boolean
     isHomePage: boolean
+    isModalOpen: boolean
 }
 
 export const state = proxy<Store>({
@@ -33,7 +34,8 @@ export const state = proxy<Store>({
     isInfoPage: false,
     isContactPage: false,
     isBioPage: false,
-    isHomePage: true
+    isHomePage: true,
+    isModalOpen: false
 })
 
 export default state

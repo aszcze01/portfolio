@@ -1,0 +1,32 @@
+@import "./mixins/respond-to";
+@import "./vars.scss";
+@import "./mixins/fontStyles";
+
+.modal {
+    @include Jura;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__background {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        top: 0;
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: black;
+        color: $grey;
+        border: 1px solid $green;
+        border-radius: 1rem;
+        padding: 1rem;
+        z-index: 11;
+        width: 50vw;
+        height: auto;
+    }
+}

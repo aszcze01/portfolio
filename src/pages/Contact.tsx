@@ -7,7 +7,8 @@ import Antenna from "../models/Antenna";
 // import { Helmet } from "react-helmet";
 import state from "../store";
 import { useSnapshot } from "valtio";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import Modal from "../components/Modal";
 
 /**
  * The Contact component is the page that allows users to send
@@ -15,8 +16,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
  * @returns {JSX.Element} The rendered Contact component.
  */
 const Contact = (): JSX.Element => {
-
-  const snap = useSnapshot(state);
+  const { isModalOpen } = useSnapshot(state);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -32,14 +32,12 @@ const Contact = (): JSX.Element => {
 
   // useEffect(() => {
   // }, []);
-  
+
   useEffect(() => {
     state.isContactPage = true;
     state.isBioPage = false;
+    setLoading;
     state.isInfoPage = false;
-    snap.isContactPage &&
-      // setRingData(gData)
-      console.log('CONTACT!')
   }, []);
 
   const handleChange = (
@@ -55,6 +53,8 @@ const Contact = (): JSX.Element => {
   };
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+  const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
 
   //6sCCuOD_pmcnhuxWQ
   //template_uaultqd
@@ -63,7 +63,6 @@ const Contact = (): JSX.Element => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setLoading(true);
-    
 
     emailjs
       .send(
@@ -84,7 +83,12 @@ const Contact = (): JSX.Element => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          // state.isModalOpen = true;
+          // state.isModalOpen && (
+          // console.log('MODAL?')
+          setShowSuccessModal(true);
+
+          // alert("Thank you. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -96,7 +100,9 @@ const Contact = (): JSX.Element => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          setShowErrorModal(true);
+
+          // alert("Ahh, something went wrong. Please try again.");
         }
       );
   };
@@ -106,6 +112,20 @@ const Contact = (): JSX.Element => {
       <Helmet>
         <title>Andrzej Szczepanik | Contact</title>
       </Helmet>
+
+      {showSuccessModal && (
+        <Modal
+          content="Thank you. I will get back to you as soon as possible."
+          closeModal={() => setShowSuccessModal(false)}
+        />
+      )}
+      {showErrorModal && (
+        <Modal
+          content="Ahh, something went wrong. Please try again."
+          closeModal={() => setShowErrorModal(false)}
+        />
+      )}
+
       <div className="contactForm">
         <div className="antenna">
           <Antenna />
@@ -114,8 +134,6 @@ const Contact = (): JSX.Element => {
           // variants={slideIn("left", "tween", 0.2, 1)}
           className="contactForm__container"
         >
-          {/* <div> */}
-          {/* <p className="contactForm__title">Get in touch</p> */}
           <h3 className="contactForm__subtitle">Make first contact!</h3>
           <h4>(or another one)</h4>
 
