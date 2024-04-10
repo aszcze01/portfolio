@@ -1,9 +1,13 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 // import { slideIn } from "../utils/motion";
 import Antenna from "../models/Antenna";
+// import { Helmet } from "react-helmet";
+import state from "../store";
+import { useSnapshot } from "valtio";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 /**
  * The Contact component is the page that allows users to send
@@ -11,6 +15,9 @@ import Antenna from "../models/Antenna";
  * @returns {JSX.Element} The rendered Contact component.
  */
 const Contact = (): JSX.Element => {
+
+  const snap = useSnapshot(state);
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const [form, setForm] = useState<{
@@ -22,6 +29,18 @@ const Contact = (): JSX.Element => {
     email: "",
     message: "",
   });
+
+  // useEffect(() => {
+  // }, []);
+  
+  useEffect(() => {
+    state.isContactPage = true;
+    state.isBioPage = false;
+    state.isInfoPage = false;
+    snap.isContactPage &&
+      // setRingData(gData)
+      console.log('CONTACT!')
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,6 +63,7 @@ const Contact = (): JSX.Element => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setLoading(true);
+    
 
     emailjs
       .send(
@@ -82,7 +102,10 @@ const Contact = (): JSX.Element => {
   };
 
   return (
-    // <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Andrzej Szczepanik | Contact</title>
+      </Helmet>
       <div className="contactForm">
         <div className="antenna">
           <Antenna />
@@ -91,7 +114,7 @@ const Contact = (): JSX.Element => {
           // variants={slideIn("left", "tween", 0.2, 1)}
           className="contactForm__container"
         >
-        {/* <div> */}
+          {/* <div> */}
           {/* <p className="contactForm__title">Get in touch</p> */}
           <h3 className="contactForm__subtitle">Make first contact!</h3>
           <h4>(or another one)</h4>
@@ -140,9 +163,8 @@ const Contact = (): JSX.Element => {
             </button>
           </form>
         </motion.div>
-        </div>
-
-    // </>
+      </div>
+    </HelmetProvider>
   );
 };
 

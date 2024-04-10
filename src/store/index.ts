@@ -12,6 +12,10 @@ interface Store {
     isBioLinkHovered: boolean
     isWorkLinkHovered: boolean
     isContactLinkHovered: boolean
+    isInfoPage: boolean
+    isContactPage: boolean
+    isBioPage: boolean
+    isHomePage: boolean
 }
 
 export const state = proxy<Store>({
@@ -26,6 +30,10 @@ export const state = proxy<Store>({
     isBioLinkHovered: false,
     isWorkLinkHovered: false,
     isContactLinkHovered: false,
+    isInfoPage: false,
+    isContactPage: false,
+    isBioPage: false,
+    isHomePage: true
 })
 
 export default state

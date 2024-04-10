@@ -91,7 +91,7 @@ export default () => (
         <Ring rotation={new THREE.Euler(0, Math.PI / 2, 0)} />
         <Ring rotation={new THREE.Euler(0, 0, Math.PI / 2)} />
 
-          <mesh scale={600} position={[0, -50, 0]}>
+          <mesh scale={500} position={[0, -50, 0]}>
               <Brain />
           </mesh>
       </Suspense>

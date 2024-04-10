@@ -19,5 +19,11 @@ nav {
     }
     .headerLinks {
         float: right;
+        &__active {
+            color: gold;
+        }
+        &__inactive {
+            color: $grey;
+        }
     }
 }

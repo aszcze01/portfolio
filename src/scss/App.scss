@@ -217,24 +217,28 @@ main {
             &:last-of-type {
               margin-right: 0;
             }
-            &:after {
-              content: "";
-              position: absolute;
-              left: 0;
-              bottom: -2px;
-              width: 100%;
-              height: 1px;
-              background: $grey;
-            }
-            &:hover::after {
-              background: gold;
-            }
+            // &::hover {
+            //   border-bottom: 1px solid gold;
+            // }
+            // &:after {
+            //   content: "";
+            //   position: absolute;
+            //   left: 0;
+            //   bottom: -2px;
+            //   width: 100%;
+            //   height: 1px;
+            //   background: $grey;
+            // }
+            // &:hover::after {
+            //   background: gold;
+            // }
             &--disabled {
               cursor: default;
               color: #888;
-              &:after {
-                display: none;
-              }
+              border-bottom: none;
+              // &:after {
+              //   display: none;
+              // }
             }
           }
           span {

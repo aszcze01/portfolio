@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useSnapshot } from "valtio";
 import state from "../store";
+import { useEffect } from "react";
 
 const Header = () => {
+
+  const snap = useSnapshot(state);
+
   const handleClick = () => {
     state.isIntro = false;
     state.isLoader = false;
@@ -21,9 +26,9 @@ const Header = () => {
         <Link to="/">ANDRZEJ SZCZEPANIK - HOME BASE</Link>
       </h1>
       <nav className="headerLinks">
-        <Link to="/info">INFO</Link>
-        <Link to="/bio">BIO</Link>
-        <Link to="/contact">CONTACT</Link>
+        <Link to="/info" className={snap.isInfoPage ? "headerLinks__active" : "headerLinks__inactive"}>INFO</Link>
+        <Link to="/bio" className={snap.isBioPage ? "headerLinks__active" : "headerLinks__inactive"}>BIO</Link>
+        <Link to="/contact" className={snap.isContactPage ? "headerLinks__active" : "headerLinks__inactive"}>CONTACT</Link>
       </nav>
     </>
   );

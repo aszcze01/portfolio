@@ -20,9 +20,6 @@ import { FilmPass } from "three/addons/postprocessing/FilmPass.js";
 import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
 import state from "../store";
 import { useSnapshot } from "valtio";
-// import Papa from "papaparse";
-// import UFOData from "../datasets/ufo.csv";
-// import { UfoModel } from "../models/Ufo";
 import * as THREE from "three";
 import { GetCSVData } from "../components/GetCSVData";
 import { useMediaQuery } from "../hooks/useMediaQuery.js";
@@ -180,7 +177,8 @@ const Earth = (props: {
   }, [globeRadius]);
 
   const getTooltip = (d: any) => `
-      <div style="cursor: pointer;text-align: center; background-color: ${blackColor}; color: ${greenColor}; border-radius: 0.5rem; border: 1px solid green; padding: 1rem; text-transform: capitalize; font-size: .8rem;">
+      <div style="cursor: pointer; text-align: center; background-color: ${blackColor}; color: ${greenColor}; border-radius: 0.5rem; border: 1px solid green; padding: 1rem; text-transform: capitalize; font-size: .8rem;">
+        <div>Probe: ${String(d.id).padStart(4, '0')}</div>
         <div>Scan data:</div>
         <div>Status: corrupted</div>
         <div>loc: <b>${d.city}</b>, ${d.country}</div>
