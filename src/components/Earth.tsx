@@ -26,38 +26,40 @@ import { useMediaQuery } from "../hooks/useMediaQuery.js";
 
 // extend({ Globe })
 
-const Earth = (props: {
-  globeImageUrl?: string;
-  waitForGlobeReady?: boolean;
-  width?: number | string;
-  height?: number | string;
-  showAtmosphere?: boolean;
-  showGlobe?: boolean;
-  atmosphereAltitude?: number;
-  atmosphereColor?: string;
-  ringsData?: any;
-  ringLat?: number;
-  ringLng?: number;
-  ringMaxRadius?: number;
-  ringPropagationSpeed?: number;
-  ringRepeatPeriod?: number;
-  ringAltitude?: number | {};
-  ringColor?: () => string;
-  pointsData?: any;
-  pointAltitude?: string | number;
-  pointColor?: string;
-  pointRadius?: number;
-  onPointClick?: () => void;
-  labelsData?: any;
-  labelColor?: () => string;
-  labelSize?: number;
-  labelLat?: number;
-  labelLng?: number;
-  labelText?: () => string;
-  labelAltitude?: number;
-  labelDotRadius?: number;
-  onLabelClick?: () => void;
-}): JSX.Element => {
+const Earth = (
+  // {
+  // globeImageUrl?: string;
+  // waitForGlobeReady?: boolean;
+  // width?: number | string;
+  // height?: number | string;
+  // showAtmosphere?: boolean;
+  // showGlobe?: boolean;
+  // atmosphereAltitude?: number;
+  // atmosphereColor?: string;
+  // ringsData?: any;
+  // ringLat?: number;
+  // ringLng?: number;
+  // ringMaxRadius?: number;
+  // ringPropagationSpeed?: number;
+  // ringRepeatPeriod?: number;
+  // ringAltitude?: number | {};
+  // ringColor?: () => string;
+  // pointsData?: any;
+  // pointAltitude?: string | number;
+  // pointColor?: string;
+  // pointRadius?: number;
+  // onPointClick?: () => void;
+  // labelsData?: any;
+  // labelColor?: () => string;
+  // labelSize?: number;
+  // labelLat?: number;
+  // labelLng?: number;
+  // labelText?: () => string;
+  // labelAltitude?: number;
+  // labelDotRadius?: number;
+  // onLabelClick?: () => void;
+// }
+): JSX.Element => {
   const snap = useSnapshot(state);
 
   let navigate = useNavigate();

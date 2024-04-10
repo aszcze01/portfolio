@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 import Antenna from "../models/Antenna";
 // import { Helmet } from "react-helmet";
 import state from "../store";
-import { useSnapshot } from "valtio";
+// import { useSnapshot } from "valtio";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Modal from "../components/Modal";
 
@@ -16,7 +16,7 @@ import Modal from "../components/Modal";
  * @returns {JSX.Element} The rendered Contact component.
  */
 const Contact = (): JSX.Element => {
-  const { isModalOpen } = useSnapshot(state);
+  // const { isModalOpen } = useSnapshot(state);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -66,10 +66,8 @@ const Contact = (): JSX.Element => {
 
     emailjs
       .send(
-        // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        "service_gpo4z5a",
-        "template_uaultqd",
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Andrzej Szczepanik",
@@ -77,18 +75,13 @@ const Contact = (): JSX.Element => {
           to_email: "aszczepanik2@gmail.com",
           message: form.message,
         },
-        // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-        "6sCCuOD_pmcnhuxWQ"
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
           setLoading(false);
           // state.isModalOpen = true;
-          // state.isModalOpen && (
-          // console.log('MODAL?')
           setShowSuccessModal(true);
-
-          // alert("Thank you. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -99,10 +92,7 @@ const Contact = (): JSX.Element => {
         (error) => {
           setLoading(false);
           console.error(error);
-
           setShowErrorModal(true);
-
-          // alert("Ahh, something went wrong. Please try again.");
         }
       );
   };

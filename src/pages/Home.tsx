@@ -14,7 +14,7 @@ import { useEffect } from "react";
 
 const Home = () => {
   const snap = useSnapshot(state);
-  const { isPanelInfo, isEarthVisible, isLoader, isDesc, isInfoPage, isBioPage, isContactPage } = snap;
+  const { isPanelInfo, isEarthVisible, isLoader, isDesc } = snap;
 
   const sequence = [EarthDescText, 3000];
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSnapshot } from "valtio";
 import state from "../store";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Header = () => {
 

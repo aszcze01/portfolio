@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { shaderMaterial } from "@react-three/drei";
 import type { Object3DNode } from "@react-three/fiber";
 import { extend } from "@react-three/fiber";

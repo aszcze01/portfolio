@@ -1,7 +1,7 @@
-import state from "../store";
-import { useSnapshot } from "valtio";
+// import state from "../store";
+// import { useSnapshot } from "valtio";
 import { createPortal } from "react-dom";
-import ModalContent from "./ModalContent";
+// import ModalContent from "./ModalContent";
 
 type ModalProps = {
   content?: string;

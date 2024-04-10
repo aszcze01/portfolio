@@ -9,7 +9,7 @@ import Brain from "../models/Brain";
 import Desc from "../components/old/Desc";
 import { ObjectDataText } from "../datasets/PanelText";
 // import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { InfoDescText } from "../datasets/DescText";
 // import { Helmet } from "react-helmet";
