@@ -20,13 +20,25 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: black;
+        background-color: rgba(0, 0, 0, 1);
         color: $grey;
-        border: 1px solid $green;
-        border-radius: 1rem;
+        border: 1px solid $grey;
+        border-radius: 0.5rem;
         padding: 1rem;
         z-index: 11;
-        width: 50vw;
+        width: 90%;
         height: auto;
+        @include respond-to(desktop) {
+            width: 30vw;
+        }
+        button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: $grey;
+            cursor: pointer;
+        }
     }
 }
