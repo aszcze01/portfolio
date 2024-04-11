@@ -18,6 +18,8 @@
     "@react-three/postprocessing": "^2.16.2",
     "@types/react-helmet": "^6.1.11",
     "@types/react-helmet-async": "^1.0.3",
+    "@types/yup": "^0.32.0",
+    "formik": "^2.4.5",
     "framer-motion": "^11.0.8",
     "leva": "^0.9.35",
     "maath": "^0.10.7",
@@ -39,7 +41,8 @@
     "three": "^0.162.0",
     "three-globe": "^2.31.0",
     "topojson-client": "^3.1.0",
-    "valtio": "^1.13.2"
+    "valtio": "^1.13.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/papaparse": "^5.3.14",
