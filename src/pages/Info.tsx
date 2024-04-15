@@ -6,7 +6,7 @@ import ScanMenu from "../components/ScanMenu";
 import Brain from "../models/Brain";
 // import Bio from "./Bio";
 // import Intro from "../components/Intro";
-import Desc from "../components/old/Desc";
+import Desc from "../components/Desc";
 import { ObjectDataText } from "../datasets/PanelText";
 // import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
 // import { motion } from "framer-motion";

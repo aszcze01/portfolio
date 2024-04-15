@@ -2,11 +2,8 @@ import {
   Bloom,
   EffectComposer,
   Glitch,
-  HueSaturation,
   Noise,
   Scanline,
-  TiltShift2,
-  Vignette,
 } from "@react-three/postprocessing";
 import { BlendFunction, GlitchMode } from "postprocessing";
 import { useEffect, useState } from "react";
@@ -30,8 +27,11 @@ export default function PostProcessingEffects() {
           blendFunction={BlendFunction.OVERLAY}
         />
         <Glitch
+          // @ts-ignore
           delay={[1, 5]}
+          // @ts-ignore
           duration={[0, 0.5]}
+          // @ts-ignore
           strength={[0.1, 0.5]}
           mode={GlitchMode.SPORADIC}
           active={active}

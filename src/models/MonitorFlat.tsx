@@ -8,7 +8,7 @@ Title: Office Monitor / Workstation Monitor
 
 import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
-import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import MonitorScene from '../assets/3D/monitor_flat-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'

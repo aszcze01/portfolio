@@ -7,7 +7,7 @@ Title: Retro Computer Monitor
 */
 
 import * as THREE from 'three'
-import { Loader, OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import MonitorCRTScene from '../assets/3D/monitor_crt-transformed.glb'
 import { Canvas, useFrame } from '@react-three/fiber'

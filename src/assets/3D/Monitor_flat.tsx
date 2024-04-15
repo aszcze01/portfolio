@@ -5,7 +5,6 @@ Files: monitor_flat.glb [19.09KB] > C:\PROJECTS\PORTFOLIO-VITE-SIMPLE\portfolio\
 */
 
 import * as THREE from 'three'
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -19,10 +18,7 @@ type GLTFResult = GLTF & {
     material: THREE.MeshStandardMaterial
     ['Material.003']: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
-
-type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/monitor_flat-transformed.glb') as GLTFResult
