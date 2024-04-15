@@ -1,7 +1,5 @@
 import "./scss/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { useSnapshot } from "valtio";
-// import state from "./store";
 import Home from "./pages/Home";
 import Bio from "./pages/Bio";
 import Info from "./pages/Info";
@@ -10,7 +8,6 @@ import Header from "./components/Header";
 import NotFound from "./pages/NotFound";
 
 function App(): JSX.Element {
-  // const snap = useSnapshot(state);
   return (
     <>
       <main>
@@ -31,7 +28,6 @@ function App(): JSX.Element {
         </BrowserRouter>
       </main>
 
-      {/* <footer></footer> */}
         <div className="content--canvas"></div>
     </>
   );

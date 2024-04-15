@@ -3,14 +3,12 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-// import { Scrollbars } from "react-custom-scrollbars-2";
 import { Tilt } from "@jdion/tilt-react";
 import MonitorFlat from "../models/MonitorFlat";
 import MonitorCRT from "../models/MonitorCRT";
 import Camera from "../models/Camera";
 import IMac from "../models/IMac";
 import Palette from "../models/Palette";
-// import { Helmet } from "react-helmet";
 import { useSnapshot } from "valtio";
 import state from "../store";
 import { useEffect } from "react";
@@ -33,7 +31,6 @@ const Bio = () => {
     state.isInfoPage = false;
     state.isContactPage = false;
     snap.isBioPage &&
-      // setRingData(gData)
       console.log("BIO!");
   }, []);
 
@@ -42,7 +39,6 @@ const Bio = () => {
       <Helmet>
         <title>Andrzej Szczepanik | Bio</title>
       </Helmet>
-      {/* <Scrollbars style={{ width: '100%', height: '1000px' }}> */}
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -247,7 +243,6 @@ const Bio = () => {
           </Tilt>
         </VerticalTimelineElement>
       </VerticalTimeline>
-      {/* </Scrollbars> */}
     </HelmetProvider>
   );
 };
