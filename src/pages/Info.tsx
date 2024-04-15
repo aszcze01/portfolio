@@ -71,15 +71,12 @@ const Info = () => {
             className="primaryPanel"
           >
             <Brain />
-            {/* {isEarthVisible && <Earth />} */}
-            {/* {isBio && <Bio />} */}
           </div>
         </section>
         {/* </EqualHeightElement> */}
 
         {/* <EqualHeightElement name="device" placeholder={false}> */}
         <section className="device__human">
-          {/* {isLoader && <Intro />} */}
           {state.isDesc && <Desc sequence={sequence} />}
         </section>
         {/* </EqualHeightElement> */}

@@ -21,7 +21,7 @@
   h3 {
     font-size: 1.5em;
     color: $grey;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
   }
   h4 {
     color: $grey;
@@ -41,7 +41,7 @@
     order: 1;
     width: 100%;
     @include respond-to(desktop) {
-        width: 50%;
+        width: 60%;
         padding: 0 2rem 2rem;
     }
   }

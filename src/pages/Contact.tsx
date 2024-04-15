@@ -9,7 +9,7 @@ import state from "../store";
 import Antenna from "../models/Antenna";
 import { motion } from "framer-motion";
 
-export const ReactEmail = () => {
+const Contact = () => {
   const [buttonState, setButtonState] = useState("Send Message");
   const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
   const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
@@ -185,3 +185,5 @@ export const ReactEmail = () => {
     </HelmetProvider>
   );
 };
+
+export default Contact;

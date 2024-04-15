@@ -59,8 +59,8 @@ const Bio = () => {
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Isobar</h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Developing new and maintainig existing web applications using frontend technologies <br/>
+                HTML, CSS (Sass, Tailwind), Javascript, Typescript, React
               </p>
             </div>
           </Tilt>
@@ -81,8 +81,8 @@ const Bio = () => {
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Hypermedia</h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Developing new and maintainig existing web applications using frontend technologies <br/>
+                HTML, CSS (Sass), Javascript, JQuery, React.
               </p>
             </div>
           </Tilt>
@@ -100,8 +100,8 @@ const Bio = () => {
             <div className="bio__content">
               <h3 className="vertical-timeline-element-title">Freelancer</h3>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Graphics Design, Desktop Publishing, Web Design.<br/>
+                Photoshop, Illustrator, Indesign, Adobe Acrobat, Flash, Blender.
               </p>
             </div>
           </Tilt>
@@ -124,8 +124,8 @@ const Bio = () => {
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Eprint</h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Graphics Design, Desktop Publishing, Prepress, Web Design, Logo Design.<br/>
+                Photoshop, Illustrator, Indesign, Acrobat, Blender.
               </p>
             </div>
           </Tilt>
@@ -148,8 +148,8 @@ const Bio = () => {
                 Grafservice
               </h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Graphics and Logo Design.<br/>
+                Photoshop, CorelDraw.
               </p>
             </div>
           </Tilt>
@@ -170,8 +170,8 @@ const Bio = () => {
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Eniro</h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Graphics design of the Yellow Pages advertisings.<br/>
+                Photoshop, Illustrator, QuarkXPress.
               </p>
             </div>
           </Tilt>
@@ -192,8 +192,8 @@ const Bio = () => {
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Freelancer</h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Graphics design.<br/>
+                Photoshop, CorelDraw.
               </p>
             </div>
           </Tilt>
@@ -217,8 +217,7 @@ const Bio = () => {
                 Polska Press
               </h4>
               <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+                Making photos and writing articles in the local newspaper.
               </p>
             </div>
           </Tilt>
@@ -241,9 +240,8 @@ const Bio = () => {
               <h4 className="vertical-timeline-element-subtitle">
                 Lodz, Poland
               </h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
+              <p> 
+                Master of Fine Arts degree, Faculty of Textiles and Clothing.
               </p>
             </div>
           </Tilt>

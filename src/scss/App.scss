@@ -209,7 +209,7 @@ main {
             float: right;
           }
           &__link {
-            position: relative;
+            // position: relative;
             margin: 0.6rem 0;
             // border-bottom: 1px solid $grey;
             @include respond-to(desktop) {
