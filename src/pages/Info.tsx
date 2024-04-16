@@ -1,11 +1,8 @@
-// import Earth from "../components/Earth";
 import { useSnapshot } from "valtio";
 import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
 import Brain from "../models/Brain";
-// import Bio from "./Bio";
-// import Intro from "../components/Intro";
 import Desc from "../components/Desc";
 import { ObjectDataText } from "../datasets/PanelText";
 // import { EqualHeight, EqualHeightElement } from "react-equal-height/clean";
@@ -16,7 +13,7 @@ import { InfoDescText } from "../datasets/DescText";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Info = () => {
-    const snap = useSnapshot(state);
+    // const snap = useSnapshot(state);
   //   let { isObjectData, isPanelInfo, isEarthVisible, isLoader, isDesc, isPanelHacked, isIntro } = state;
 
   useEffect(() => {
@@ -31,12 +28,6 @@ const Info = () => {
     state.isBioPage = false;
     state.isContactPage = false;
     state.isHomePage = false;
-  }, []);
-
-  useEffect(() => {
-    snap.isInfoPage &&
-      // setRingData(gData)
-      console.log('INFO!')
   }, []);
 
   const sequence = [InfoDescText, 3000];
