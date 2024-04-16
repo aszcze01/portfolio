@@ -6,9 +6,10 @@ nav {
     @include Jura;
     display: flex;
     justify-content: flex-end;
-    margin: 0 2rem 0 0;
+    margin: 0 0.7rem 0 0;
     font-size: 1rem;
     @include respond-to(desktop) {
+        margin: 0 2rem 0 0;
         font-size: 1.2rem;
     }
     a {

@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <>
       <h1 className="header__title" onClick={handleClick}>
-        <Link to="/">ANDRZEJ SZCZEPANIK - HOME BASE</Link>
+        <Link to="/">ANDRZEJ SZCZEPANIK -<br className="mobileOnly" /> HOME BASE</Link>
       </h1>
       <nav className="headerLinks">
         <Link to="/info" className={snap.isInfoPage ? "headerLinks__active" : "headerLinks__inactive"}>INFO</Link>

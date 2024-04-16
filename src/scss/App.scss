@@ -8,7 +8,6 @@
 @import "./modal.scss";
 
 #root {
-  // max-width: 1280px;
   margin: 0 auto;
   padding: 0;
   text-align: center;
@@ -37,9 +36,13 @@ body {
 
 h1 {
   @include Jura;
-  font-size: 1.2rem;
-  margin: 0 0 0 2rem;
+  font-size: 0.9rem;
+  margin: 0 0.7rem;
   text-align: left;
+  @include respond-to(desktop) {
+    margin: 0 0 0 2rem;
+    font-size: 1.2rem;
+  }
   a {
     color: $green;
   }
@@ -218,28 +221,10 @@ main {
             &:last-of-type {
               margin-right: 0;
             }
-            // &::hover {
-            //   border-bottom: 1px solid gold;
-            // }
-            // &:after {
-            //   content: "";
-            //   position: absolute;
-            //   left: 0;
-            //   bottom: -2px;
-            //   width: 100%;
-            //   height: 1px;
-            //   background: $grey;
-            // }
-            // &:hover::after {
-            //   background: gold;
-            // }
             &--disabled {
               cursor: default;
               color: #888;
               border-bottom: none;
-              // &:after {
-              //   display: none;
-              // }
             }
           }
           span {
@@ -366,15 +351,9 @@ main {
   }
 }
 
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color: #213547;
-//     background-color: #ffffff;
-//   }
-//   /* a:hover {
-//     color: #747bff;
-//   } */
-//   /* button {
-//     background-color: #f9f9f9;
-//   } */
-// }
+.mobileOnly {
+  display: block;
+  @include respond-to(desktop) {
+    display: none;
+  }
+}
