@@ -1,4 +1,3 @@
-import { useSnapshot } from "valtio";
 import state from "../store";
 import RandomizeText from "../components/RandomizeText";
 import ScanMenu from "../components/ScanMenu";
