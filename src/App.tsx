@@ -6,29 +6,29 @@ import Info from "./pages/Info";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/react";
 
 function App(): JSX.Element {
   return (
     <>
       <main>
         <BrowserRouter>
+          <header>
+            <Header />
+          </header>
 
-            <header>
-              <Header />
-            </header>
-          
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/info" element={<Info />} />
-              <Route path="/bio" element={<Bio />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path='*' element={<NotFound />}/>
-            </Routes>
-  
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/bio" element={<Bio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </BrowserRouter>
       </main>
 
-        <div className="content--canvas"></div>
+      <div className="content--canvas"></div>
+      <Analytics />
     </>
   );
 }
