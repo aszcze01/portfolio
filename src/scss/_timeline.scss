@@ -28,6 +28,13 @@
     }
 }
 
+.vertical-timeline.vertical-timeline--two-columns {
+  width: 90%;
+  @include respond-to(desktop) {
+    width: 100%;
+  }
+}
+
 .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
     // left: 130% !important;
     text-align: left !important;
