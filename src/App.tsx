@@ -7,8 +7,10 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 function App(): JSX.Element {
+  injectSpeedInsights();
   return (
     <>
       <main>
