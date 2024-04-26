@@ -1,5 +1,5 @@
 import Globe from "react-globe.gl";
-import texture from "../assets/earth-green-3.jpg";
+import texture from "../assets/earth-green-4.jpg";
 import { useNavigate } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
