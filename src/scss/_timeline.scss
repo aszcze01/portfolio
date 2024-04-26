@@ -21,7 +21,7 @@
     font-size: 1.2rem !important;
     padding: 0.8em 0 0.8em 3em !important;
     opacity: 1 !important;
-    @include JuraBold;
+    font-family: "Jura-Bold";
     @include respond-to(desktop) {
         padding: 1.2rem 0;
         right: 134% !important;

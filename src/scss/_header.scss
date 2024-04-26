@@ -3,7 +3,7 @@
 @import "./mixins/fontStyles";
 
 nav {
-    @include Jura;
+    font-family: "Jura-Regular";
     display: flex;
     justify-content: flex-end;
     margin: 0 0.7rem 0 0;

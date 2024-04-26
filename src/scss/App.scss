@@ -1,11 +1,12 @@
 @import "./mixins/respond-to";
-@import "./mixins/fontStyles";
+// @import "./mixins/fontStyles";
 @import "./timeline.scss";
 @import "./contact.scss";
 @import "./header.scss";
 @import "./vars.scss";
 @import "./notFound.scss";
 @import "./modal.scss";
+@import "./fontface.scss";
 
 #root {
   margin: 0 auto;
@@ -35,7 +36,7 @@ body {
 }
 
 h1 {
-  @include Jura;
+  font-family: "Jura-Regular";
   font-size: 0.9rem;
   margin: 0 0.7rem;
   text-align: left;
@@ -193,7 +194,7 @@ main {
         font-size: 1.2rem;
         overflow: hidden;
         padding: 0;
-        @include Jura;
+        font-family: "Jura-Regular";
         @include respond-to(desktop) {
           margin-top: 2rem;
         }
@@ -203,7 +204,7 @@ main {
         .scanMenu {
           position: relative;
           cursor: pointer;
-          @include Jura;
+          font-family: "Jura-Regular";
           @include respond-to(desktop) {
             margin: 1rem auto;
             width: 380px;
@@ -290,7 +291,7 @@ main {
       border-radius: $borderRadius;
       margin-left: 0;
       white-space: pre-line;
-      @include Jura;
+      font-family: "Jura-Regular";
       @include respond-to(desktop) {
         width: auto;
         padding: 2rem;
@@ -315,7 +316,7 @@ main {
       rgb(32, 32, 32) 35%,
       rgb(46, 46, 46) 100%
     );
-    @include Jura;
+    font-family: "Jura-Regular";
     @include respond-to(desktop) {
       margin: 0;
     }

@@ -1,4 +1,5 @@
 import { proxy } from 'valtio'
+// import { devtools } from 'valtio/utils'
 
 interface Store {
     isIntro: boolean
@@ -37,5 +38,7 @@ export const state = proxy<Store>({
     isHomePage: true,
     isModalOpen: false
 })
+
+// const unsub = devtools(state, { name: 'state name', enabled: true })
 
 export default state
