@@ -1,9 +1,9 @@
 @import "./mixins/respond-to";
 @import "./vars.scss";
-@import "./mixins/fontStyles";
+@import "./fontface.scss";
 
 .contactForm {
-  @include Jura;
+  font-family: "Jura-Regular";
   color: $green;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0;
